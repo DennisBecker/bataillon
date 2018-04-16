@@ -1,16 +1,16 @@
 {
-    "name": "Bataillon",
-    "license": "MIT",
-    "type": "project",
-    "require": {
-        "php": ">=7.0",
-        "guzzlehttp/guzzle": "^6.3",
-        "mnapoli/silly-php-di": "^1.2",
-        "twig/twig": "^2.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "Bataillon\\": "src/"
-        }
+  "name": "bataillon/updater",
+  "license": "MIT",
+  "type": "project",
+  "require": {
+    "php": ">=7.0",
+    "guzzlehttp/guzzle": "^6.3",
+    "mnapoli/silly-php-di": "^1.2",
+    "twig/twig": "^2.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bataillon\\": "src/"
     }
+  }
 }
