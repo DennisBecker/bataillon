@@ -3,9 +3,8 @@
 
 namespace Bataillon\Commands;
 
+use Bataillon\Controller\GuildController;
 use Bataillon\Controller\UpdateController;
-use Bataillon\Mapper\CharactersMapper;
-use Bataillon\Persistance\FileHandler;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -23,20 +22,6 @@ class RosterCommand
         );
 
         $container->call(UpdateController::class, [$progressBar]);
-
-        $charactersMapper = $container->get(CharactersMapper::class);
-        $fileHandler = $container->get(FileHandler::class);
-
-        $guildsDir = new \DirectoryIterator(__DIR__ . '/../../data/guilds');
-
-        foreach ($guildsDir as $guildFile) {
-            if (!$guildFile->isFile()) {
-                continue;
-            }
-
-            var_dump($guildFile->getBasename());
-        }
-
-        $output->writeln($charactersMapper->getName("AAYLASECURA"));
+        $container->call(GuildController::class);
     }
 }

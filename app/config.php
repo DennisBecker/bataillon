@@ -38,6 +38,12 @@ $container->set(\Bataillon\Controller\UpdateController::class, new \Bataillon\Co
     $container->get('GuildList')
 ));
 
+$container->set(\Bataillon\Controller\GuildController::class, new \Bataillon\Controller\GuildController(
+    $container->get(\Bataillon\Persistance\FileHandler::class),
+    $container->get(\Bataillon\Mapper\CharactersMapper::class),
+    $container->get('GuildList')
+));
+
 $container->set(\Bataillon\Mapper\CharactersMapper::class, new \Bataillon\Mapper\CharactersMapper(
     $container->get(\Bataillon\Persistance\FileHandler::class)
 ));
