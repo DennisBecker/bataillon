@@ -1,0 +1,9 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <ul>
+    {% for guild, data in guilds %}
+        <li><a href="./{{ guild }}/index.html">{{ guild }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

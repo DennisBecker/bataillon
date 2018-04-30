@@ -9,7 +9,7 @@ $container->set('GuildList', [
     //'41st Bataillon' => '/api/guilds/3233/units/',
     'B2TF Bataillon' => '/api/guilds/25014/units/',
     'Outerrim10 Bataillon' => '/api/guilds/25118/units/',
-    '313th Bataillon' => '/api/guilds/31673/units/',
+    '313th Bataillon' => '/api/guilds/41470/units/',
     '443rd Bataillon' => '/api/guilds/41450/units/',
     '442nd Bataillon' => '/api/guilds/16040/units/',
     '18th Bataillon' => '/api/guilds/32283/units/',

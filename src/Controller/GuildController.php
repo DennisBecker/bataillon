@@ -34,11 +34,13 @@ class GuildController
 
     public function __invoke()
     {
+        $guildData = [];
         foreach (array_keys($this->guildList) as $guild) {
-            $this->buildMemberData($this->readJsonDataAsArray($guild), $guild);
-            var_dump($this->charactersMapper->getName("AAYLASECURA"));
-            die();
+            $guildData[$guild]['member'] = $this->buildMemberData($this->readJsonDataAsArray($guild), $guild);
+            $guildData[$guild]['power'] = array_sum(array_column($guildData[$guild]['member'], 'power'));
         }
+
+        return $guildData;
     }
 
     private function buildMemberData($guildData, $guild)
@@ -46,6 +48,10 @@ class GuildController
         $playerCharacters = [];
         foreach ($guildData as $characterId => $memberCharacterData) {
             foreach ($memberCharacterData as $character) {
+
+                if (!isset($character['url'])) {
+                    $character['url'] = '';
+                }
 
                 if (!isset($playerCharacters[$character['player']])) {
                     $playerCharacters[$character['player']] = [
@@ -86,22 +92,7 @@ class GuildController
             }
         }
 
-        $player = current($playerCharacters);
-        var_dump($player['name']);
-        var_dump($player['power']);
-        var_dump($player['guild']);
-    }
-
-    private function handleCharacter($characterData)
-    {
-
-    }
-
-    private function handleMemberCharacterData($character)
-    {
-        return
-        var_dump($character);
-        die();
+        return $playerCharacters;
     }
 
     private function readJsonDataAsArray($guild)
