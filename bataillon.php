@@ -10,3 +10,5 @@ $app->command('update', Bataillon\Commands\RosterCommand::class);
 $app->setDefaultCommand('update');
 
 $app->run();
+
+exit(0);
