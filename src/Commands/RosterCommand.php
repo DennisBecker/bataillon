@@ -16,7 +16,7 @@ class RosterCommand
      */
     private $twig;
 
-    private $basepath = __DIR__ . '/../../compiled/';
+    private $basepath = __DIR__ . '/../../dist/';
 
     public function __construct(\Twig_Environment $twig)
     {
@@ -25,7 +25,8 @@ class RosterCommand
 
     public function __invoke(OutputInterface $output, ContainerInterface $container)
     {
-        $progressBar = new ProgressBar($output, 12);
+        $apiCallCount = 2 + count($container->get('GuildList'));
+        $progressBar = new ProgressBar($output, $apiCallCount);
         $progressBar->setBarCharacter('<fg=green>⚬</>');
         $progressBar->setEmptyBarCharacter("<fg=red>⚬</>");
         $progressBar->setProgressCharacter("<fg=green>➤</>");
@@ -67,6 +68,10 @@ class RosterCommand
     protected function cleanOutputDirectory()
     {
         $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->basepath, \FilesystemIterator::SKIP_DOTS), \RecursiveIteratorIterator::CHILD_FIRST);
+        /**
+         * @var string $filename
+         * @var \SplFileInfo $fileInfo
+         */
         foreach ($iterator as $filename => $fileInfo) {
             if ($fileInfo->isDir()) {
                 rmdir($filename);

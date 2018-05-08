@@ -50,11 +50,7 @@ class UpdateController
     {
         $progressBar->setMessage("Updating CharactersModel", 'status');
 
-        $lastModifiedDate = $this->fileHandler->getLastModifiedDate(static::CHARACTERS_FILENAME);
-
-        if ($lastModifiedDate < $this->getTimeStampOfTodaysMidnight()) {
-            $this->fileHandler->write(static::CHARACTERS_FILENAME, $this->client->getCharacters());
-        }
+        $this->fileHandler->write(static::CHARACTERS_FILENAME, $this->client->getCharacters());
 
         $progressBar->advance();
     }
@@ -63,34 +59,49 @@ class UpdateController
     {
         $progressBar->setMessage("Updating Ships", 'status');
 
-        $lastModifiedDate = $this->fileHandler->getLastModifiedDate(static::SHIPS_FILENAME);
-
-        if ($lastModifiedDate < $this->getTimeStampOfTodaysMidnight()) {
-            $this->fileHandler->write(static::SHIPS_FILENAME, $this->client->getShips());
-        }
+        $this->fileHandler->write(static::SHIPS_FILENAME, $this->client->getShips());
 
         $progressBar->advance();
     }
 
     private function updateGuilds(ProgressBar $progressBar)
     {
+        $updates = json_decode($this->fileHandler->read('updates.json'), true);
+        try {
+            $timeZone = new \DateTimeZone('Europe/Berlin');
+            $lastUpdate = new \DateTimeImmutable($updates['lastUpdated'], $timeZone);
+            $today = new \DateTimeImmutable('now', $timeZone);
+        } catch (\Exception $e) {
+            throw new \RuntimeException($e);
+        }
+
+        if ($today->diff($lastUpdate)->days === 0) {
+            return;
+        }
+
+        $currentGuildDir = 'guilds/' . $today->format('Y-m-d') . '/';
+        $this->fileHandler->createDirectory($currentGuildDir);
+
         foreach ($this->guildList as $guild => $uri) {
             $progressBar->setMessage("Updating Guild " . $guild, 'status');
 
-            $guildFilename = 'guilds/' . $guild . '.json';
-            $lastModifiedDate = $this->fileHandler->getLastModifiedDate($guildFilename);
-
-            if ($lastModifiedDate < $this->getTimeStampOfTodaysMidnight()) {
-                $this->fileHandler->write($guildFilename, $this->client->getGuildData($uri));
-            }
+            $guildFilename = $currentGuildDir . $guild . '.json';
+            $this->fileHandler->write($guildFilename, $this->client->getGuildData($uri));
 
             $progressBar->advance();
         }
+
+        $updates['lastUpdated'] = $today->format('Y-m-d');
+        $this->fileHandler->write('updates.json', json_encode($updates));
     }
 
     private function getTimeStampOfTodaysMidnight()
     {
-        $date = new \DateTimeImmutable('now', new \DateTimeZone('Europe/Berlin'));
+        try {
+            $date = new \DateTimeImmutable('now', new \DateTimeZone('Europe/Berlin'));
+        } catch (\Exception $e) {
+            throw new \RuntimeException($e);
+        }
 
         return $date->setTime(0, 0, 0,0)->getTimestamp();
     }

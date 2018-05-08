@@ -3,8 +3,6 @@
 
 namespace Bataillon\Controller;
 
-
-use Bataillon\Entity\Character;
 use Bataillon\Mapper\CharactersMapper;
 use Bataillon\Persistance\FileHandler;
 
@@ -36,17 +34,23 @@ class GuildController
     {
         $guildData = [];
         foreach (array_keys($this->guildList) as $guild) {
-            $guildData[$guild]['member'] = $this->buildMemberData($this->readJsonDataAsArray($guild), $guild);
+            $guildData[$guild]['member'] = $this->buildMemberData($guild);
             $guildData[$guild]['power'] = array_sum(array_column($guildData[$guild]['member'], 'power'));
         }
+
+        uasort($guildData, function($a, $b) {
+           return $a['power'] < $b['power'];
+        });
 
         return $guildData;
     }
 
-    private function buildMemberData($guildData, $guild)
+    private function buildMemberData($guild)
     {
+        $guildData = $this->fileHandler->readGuildDataOfLastTwoDataPoints($guild);
+
         $playerCharacters = [];
-        foreach ($guildData as $characterId => $memberCharacterData) {
+        foreach (array_shift($guildData) as $characterId => $memberCharacterData) {
             foreach ($memberCharacterData as $character) {
 
                 if (!isset($character['url'])) {
@@ -92,11 +96,34 @@ class GuildController
             }
         }
 
-        return $playerCharacters;
-    }
+        foreach (array_shift($guildData) as $characterId => $memberCharacterData) {
+            foreach ($memberCharacterData as $character) {
+                if (!array_key_exists($character['player'], $playerCharacters)) {
+                    break;
+                }
 
-    private function readJsonDataAsArray($guild)
-    {
-        return json_decode($this->fileHandler->read('guilds/' . $guild . '.json'), true);
+                switch ($character['combat_type']) {
+                    case 1:
+                        $playerCharacters[$character['player']]['characters'][$characterId] += [
+                            'power_old' => $character['power'],
+                            'rarity_old' => $character['rarity'],
+                            'level_old' => $character['level'],
+                            'gear_old' => $character['gear_level'],
+                        ];
+                        break;
+                    case 2:
+                        $playerCharacters[$character['player']]['ships'][$characterId] += [
+                            'power_old' => $character['power'],
+                            'rarity_old' => $character['rarity'],
+                            'level_old' => $character['level'],
+                        ];
+                        break;
+                    default:
+                        throw new \InvalidArgumentException(sprintf('Combat type %d is UNKNOWN.', $character['combat_type']));
+                }
+            }
+        }
+
+        return $playerCharacters;
     }
 }
