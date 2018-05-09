@@ -6,6 +6,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Guild</th>
+            <th scope="col">Member</th>
             <th scope="col">Power</th>
         </tr>
         </thead>
@@ -13,7 +14,8 @@
     {% for guild, data in guilds %}
         <tr>
             <th scope="row">{{ loop.index }}</th>
-            <td><a href="./{{ guild }}/index.html">{{ guild }}</a></td>
+            <td><a href="/{{ guild }}/index.html">{{ guild }}</a></td>
+            <td>{{ data.member|length }}</td>
             <td>{{ data.power|number_format }}</td>
         </tr>
     {% endfor %}

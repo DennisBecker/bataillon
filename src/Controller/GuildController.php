@@ -98,7 +98,8 @@ class GuildController
 
         foreach (array_shift($guildData) as $characterId => $memberCharacterData) {
             foreach ($memberCharacterData as $character) {
-                if (!array_key_exists($character['player'], $playerCharacters)) {
+                if (!array_key_exists($character['player'], $playerCharacters)
+                    || !array_key_exists($characterId, $playerCharacters[$character['player']]['characters'])) {
                     break;
                 }
 
@@ -123,6 +124,10 @@ class GuildController
                 }
             }
         }
+
+        uasort($playerCharacters, function($a, $b) {
+            return $a['power'] < $b['power'];
+        });
 
         return $playerCharacters;
     }

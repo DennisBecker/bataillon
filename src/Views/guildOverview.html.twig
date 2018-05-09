@@ -1,10 +1,28 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>{{ guildName }}</h1>
-    <ul>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+        <h1 class="h2">{{ guildName }}</h1>
+    </div>
+
+    <table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Guild</th>
+        <th scope="col">Power</th>
+        <th scope="col">Characters</th>
+    </tr>
+    </thead>
+    <tbody>
         {% for member in guild.member %}
-        <li>{{ member.name }}</li>
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td><a href="/{{ guildName }}/index.html">{{ member.name }}</a></td>
+                <td>{{ member.power|number_format }}</td>
+                <td>{{ member.characters|length }}</td>
+            </tr>
         {% endfor %}
-    </ul>
+    </tbody>
+    </table>
 {% endblock %}
