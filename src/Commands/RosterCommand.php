@@ -5,6 +5,8 @@ namespace Bataillon\Commands;
 
 use Bataillon\Controller\GuildController;
 use Bataillon\Controller\UpdateController;
+use Bataillon\Persistance\FileHandler;
+use PhpParser\Node\Scalar\MagicConst\File;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -49,6 +51,13 @@ class RosterCommand
         $this->cleanOutputDirectory();
         $this->copyWebSourceFiles();
 
+        $fileHandler = new FileHandler();
+        $raids = json_decode($fileHandler->read('raids.json'), true);
+        $characters = [];
+         foreach (json_decode($fileHandler->read('characters.json'), true) as $char) {
+             $characters[$char['base_id']] = $char;
+         }
+
         $this->render('index.html.twig', 'index.html', ['guilds' => $guildData]);
 
         foreach ($guildData as $guild => $data) {
@@ -57,8 +66,21 @@ class RosterCommand
                'guild' => $data,
             ]);
 
-            foreach ($data['member'] as $memberName => $membeData) {
+            foreach ($data['member'] as $memberName => $memberData) {
+                $this->render('memberOverview.html.twig', $guild . '/' . $memberName .'/index.html', [
+                    'name' => $memberName,
+                    'characters' => $memberData['characters'],
+                ]);
 
+                foreach ($raids as $raid => $teams) {
+                    $this->render('raids/' . $raid . '.html.twig', $guild . '/' . $memberName . '/'. $raid .'.html', [
+                        'name' => $memberName,
+                        'characters' => $characters,
+                        'playerCharacters' => $memberData['characters'],
+                        'raid' => $raid,
+                        'raidTeams' => $teams,
+                    ]);
+                }
             }
         }
     }
@@ -71,11 +93,11 @@ class RosterCommand
                 mkdir($fileInfo->getPath(), 0777, true);
             }
 
-            $output = $this->twig->render($template, $data);
-            file_put_contents($this->distPath . $outfile, $output);
+            file_put_contents($this->distPath . $outfile, $this->twig->render($template, $data));
         } catch (\Twig_Error_Loader $e) {
         } catch (\Twig_Error_Runtime $e) {
         } catch (\Twig_Error_Syntax $e) {
+            $this->output->write($e);
             throw new \RuntimeException($e);
         }
     }

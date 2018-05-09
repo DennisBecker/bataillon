@@ -17,7 +17,9 @@ $container->set('GuildList', [
 
 $container->set(Twig_Environment::class, function () {
     $loader = new Twig_Loader_Filesystem(__DIR__ . '/../src/Views');
-    return new Twig_Environment($loader);
+    $twig = new Twig_Environment($loader, array('debug' => true));
+    $twig->addExtension(new Twig_Extension_Debug());
+    return $twig;
 });
 
 $container->set(\Bataillon\Persistance\FileHandler::class, new \Bataillon\Persistance\FileHandler());

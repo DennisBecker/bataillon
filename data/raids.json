@@ -1,0 +1,41 @@
+{
+  "sith": {
+    "p1": [
+      {
+        "name": "RJT & Friends",
+        "damage": "2000000",
+        "characters": [
+          "REYJEDITRAINING",
+          "BB8",
+          "R2D2_LEGENDARY",
+          "REY",
+          "RESISTANCETROOPER"
+        ]
+      },
+      {
+        "name": "RJT & Friends + Visas",
+        "damage": "2000000",
+        "characters": [
+          "REYJEDITRAINING",
+          "BB8",
+          "VISASMARR",
+          "REY",
+          "RESISTANCETROOPER"
+        ]
+      }
+    ],
+    "p2": [
+      {
+        "name": "Leia Spam",
+        "damage": "1000000",
+        "characters": [
+          "ADMIRALACKBAR",
+          "PRINCESSLEIA",
+          "GENERALKENOBI",
+          "SABINEWRENS3",
+          "BARRISSOFFEE"
+        ]
+      }
+    ]
+  }
+}

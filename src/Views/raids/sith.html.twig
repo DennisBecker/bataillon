@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+        <h1 class="h2">{{ name }} - Sith Triumvirate Teams</h1>
+    </div>
+
+    {% for phase, teams in raidTeams %}
+        <h3>Phase {{ loop.index }}</h3>
+        <div class="row">
+        {% for team in teams %}
+            {% include 'raids/raidTeamTable.html.twig' %}
+        {% endfor %}
+        </div>
+    {% endfor %}
+{% endblock %}
