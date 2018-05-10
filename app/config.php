@@ -24,10 +24,6 @@ $container->set(Twig_Environment::class, function () {
 
 $container->set(\Bataillon\Persistance\FileHandler::class, new \Bataillon\Persistance\FileHandler());
 
-$container->set(\Bataillon\Renderers\MemberProfile::class,
-    new \Bataillon\Renderers\MemberProfile($container->get(Twig_Environment::class))
-);
-
 $container->set(\Bataillon\Clients\SWGoH::class, new \Bataillon\Clients\SWGoH(
     new \GuzzleHttp\Client([
         'base_uri' => 'https://swgoh.gg',

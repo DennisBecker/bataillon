@@ -1,4 +1,4 @@
-<div class="col-4">
+<div class="col-sm-12 col-md-6 col-lg-4">
     <h4>{{ team.name }} - {{ team.damage|number_format }}</h4>
     <table class="table raidtable tstraid">
         <thead>
@@ -15,11 +15,11 @@
             {% set char = attribute(characters, character) %}
             {% set playerChar = attribute(playerCharacters, character) %}
         <tr>
-            <td bgcolor="#cf95ff">{{ char.name }}</td>
-            <td style="background-color: rgb(224, 125, 134);">{{ playerChar.rarity|default(0) }}{% if playerChar.rarity - playerChar.rarity_old > 0 %}<span class="oi oi-arrow-top"></span>{{ playerChar.rarity - playerChar.rarity_old }}{% endif %}</td>
-            <td style="background-color: rgb(224, 125, 134);">{{ playerChar.gear|default(0) }}</td>
-            <td style="background-color: rgb(224, 125, 134);">{{ playerChar.level|default(0) }}</td>
-            <td style="background-color: rgb(224, 125, 134);">No!</td>
+            <td>{{ char.name }}</td>
+            <td>{{ playerChar.rarity|default(0) }}{% if playerChar.rarity_old is defined and playerChar.rarity - playerChar.rarity_old > 0 %} <span class="oi oi-arrow-top"></span>{{ playerChar.rarity - playerChar.rarity_old }}{% endif %}</td>
+            <td>{{ playerChar.gear|default(0) }}</td>
+            <td>{{ playerChar.level|default(0) }}</td>
+            <td>No! Yes?</td>
         </tr>
         {% endfor %}
         </tbody>

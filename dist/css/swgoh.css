@@ -2,6 +2,22 @@ body {
     font-size: .875rem;
 }
 
+.bg-green {
+    background-color: rgb(135, 220, 103);
+}
+
+.bg-red {
+    background-color: rgb(224, 125, 134);
+}
+
+.bg-violet {
+    background-color: rgb(207, 149, 255);
+}
+
+.bg-yellow {
+    background-color: rgb(222, 207, 98);
+}
+
 [role="main"] {
     padding-top: 48px;
 }
@@ -37,4 +53,14 @@ body {
     z-index: 100;
     padding: 48px 0 0;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.table thead tr {
+    background-color: #dddddd
+}
+
+.section-bar {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 15px;
 }

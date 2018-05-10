@@ -70,6 +70,7 @@ class RosterCommand
                 $this->render('memberOverview.html.twig', $guild . '/' . $memberName .'/index.html', [
                     'name' => $memberName,
                     'characters' => $memberData['characters'],
+                    'raids' => $raids,
                 ]);
 
                 foreach ($raids as $raid => $teams) {
@@ -94,10 +95,8 @@ class RosterCommand
             }
 
             file_put_contents($this->distPath . $outfile, $this->twig->render($template, $data));
-        } catch (\Twig_Error_Loader $e) {
-        } catch (\Twig_Error_Runtime $e) {
-        } catch (\Twig_Error_Syntax $e) {
-            $this->output->write($e);
+        } catch (\Exception $e) {
+            $this->output->write($e->getMessage());
             throw new \RuntimeException($e);
         }
     }

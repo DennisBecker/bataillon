@@ -18,7 +18,7 @@
         {% for member in guild.member %}
             <tr>
                 <th scope="row">{{ loop.index }}</th>
-                <td><a href="/{{ guildName }}/{{ member.name }}/index.html">{{ member.name }}</a></td>
+                <td><a href="/{{ guildName|url_encode }}/{{ member.name|url_encode }}/index.html">{{ member.name }}</a></td>
                 <td>{{ member.power|number_format }}</td>
                 <td>{{ member.characters|length }}</td>
             </tr>

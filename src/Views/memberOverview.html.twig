@@ -6,7 +6,9 @@
     </div>
 
     <h2>Raids</h2>
-    <ul>
-        <li><a href="./sith.html">Sith Triumvirate</a></li>
-    </ul>
+
+    {% for raid in raids|keys %}
+        <h3>{{ raid }}</h3>
+        <a href="./{{ raid|url_encode }}.html">See detailed character stats</a>
+    {% endfor %}
 {% endblock %}
