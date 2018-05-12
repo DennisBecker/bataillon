@@ -11,7 +11,7 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-
+              "Inspirational Presence"
             ]
           },
           {
@@ -20,7 +20,7 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-
+              "Roll with the Punches"
             ]
           },
           {
@@ -29,7 +29,7 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-
+              "Number Crunch"
             ]
           },
           {
@@ -37,18 +37,14 @@
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           },
           {
             "id": "RESISTANCETROOPER",
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           }
         ]
       },
@@ -80,27 +76,21 @@
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           },
           {
             "id": "REY",
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           },
           {
             "id": "RESISTANCETROOPER",
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           }
         ]
       },
@@ -133,7 +123,7 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-
+              "Number Crunch"
             ]
           },
           {
@@ -141,25 +131,20 @@
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           },
           {
             "id": "VISASMARR",
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           }
         ]
       },
       {
         "name": "RJT & Friends + Barriss",
         "damage": "2000000",
-
         "characters": [
           {
             "id": "REYJEDITRAINING",
@@ -185,7 +170,7 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-
+              "Numbers Crunch"
             ]
           },
           {
@@ -193,9 +178,7 @@
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           },
           {
             "id": "BARRISSOFFEE",
@@ -203,7 +186,7 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-
+              "Swift Recovery"
             ]
           }
         ]
@@ -237,7 +220,7 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-
+              "Numbers Crunch"
             ]
           },
           {
@@ -255,7 +238,7 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-
+              "Strength Flows From the Force"
             ]
           }
         ]
@@ -271,18 +254,14 @@
             "rarity": 7,
             "level": 85,
             "gear": 8,
-            "zetas": [
-
-            ]
+            "zetas": []
           },
           {
             "id": "PRINCESSLEIA",
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           },
           {
             "id": "GENERALKENOBI",
@@ -308,7 +287,7 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-
+              "Swift Recovery"
             ]
           }
         ]
@@ -322,45 +301,35 @@
             "rarity": 7,
             "level": 85,
             "gear": 8,
-            "zetas": [
-
-            ]
+            "zetas": []
           },
           {
             "id": "GRANDADMIRALTHRAWN",
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           },
           {
             "id": "SABINEWRENS3",
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           },
           {
             "id": "GENERALKENOBI",
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-              "Demolish"
-            ]
+            "zetas": []
           },
           {
             "id": "WAMPA",
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           }
         ]
       },
@@ -372,28 +341,22 @@
             "id": "BOBAFETT",
             "rarity": 7,
             "level": 85,
-            "gear": 8,
-            "zetas": [
-
-            ]
+            "gear": 11,
+            "zetas": []
           },
           {
             "id": "GRANDADMIRALTHRAWN",
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           },
           {
             "id": "SABINEWRENS3",
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           },
           {
             "id": "R2D2_LEGENDARY",
@@ -401,7 +364,7 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-              "Demolish"
+              "Numbers Crunch"
             ]
           },
           {
@@ -409,9 +372,7 @@
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           }
         ]
       },
@@ -425,7 +386,7 @@
             "level": 85,
             "gear": 8,
             "zetas": [
-
+              "Legendary Strategist"
             ]
           },
           {
@@ -442,27 +403,21 @@
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           },
           {
             "id": "SHORETROOPER",
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-              "Demolish"
-            ]
+            "zetas": []
           },
           {
             "id": "SNOWTROOPER",
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-
-            ]
+            "zetas": []
           }
         ]
       },
@@ -475,9 +430,7 @@
             "rarity": 7,
             "level": 85,
             "gear": 8,
-            "zetas": [
-              "Play to Strength"
-            ]
+            "zetas": []
           },
           {
             "id": "SABINEWRENS3",
@@ -493,18 +446,14 @@
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-              "Staggering Sweep"
-            ]
+            "zetas": []
           },
           {
             "id": "EZRABRIDGERS3",
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": [
-              "Flourish"
-            ]
+            "zetas": []
           },
           {
             "id": "KANANJARRUSS3",
