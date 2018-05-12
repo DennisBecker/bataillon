@@ -5,22 +5,259 @@
         "name": "RJT & Friends",
         "damage": "2000000",
         "characters": [
-          "REYJEDITRAINING",
-          "BB8",
-          "R2D2_LEGENDARY",
-          "REY",
-          "RESISTANCETROOPER"
+          {
+            "id": "REYJEDITRAINING",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "BB8",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "R2D2_LEGENDARY",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "REY",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "RESISTANCETROOPER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          }
+        ]
+      },
+      {
+        "name": "RJT & Friends + Visas / No R2",
+        "damage": "2000000",
+
+        "characters": [
+          {
+            "id": "REYJEDITRAINING",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Inspirational Presence"
+            ]
+          },
+          {
+            "id": "BB8",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Roll with the Punches"
+            ]
+          },
+          {
+            "id": "VISASMARR",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "REY",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "RESISTANCETROOPER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          }
         ]
       },
       {
         "name": "RJT & Friends + Visas",
         "damage": "2000000",
+
         "characters": [
-          "REYJEDITRAINING",
-          "BB8",
-          "VISASMARR",
-          "REY",
-          "RESISTANCETROOPER"
+          {
+            "id": "REYJEDITRAINING",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Inspirational Presence"
+            ]
+          },
+          {
+            "id": "BB8",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Roll with the Punches"
+            ]
+          },
+          {
+            "id": "R2D2_LEGENDARY",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "REY",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "VISASMARR",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          }
+        ]
+      },
+      {
+        "name": "RJT & Friends + Barriss",
+        "damage": "2000000",
+
+        "characters": [
+          {
+            "id": "REYJEDITRAINING",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Inspirational Presence"
+            ]
+          },
+          {
+            "id": "BB8",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Roll with the Punches"
+            ]
+          },
+          {
+            "id": "R2D2_LEGENDARY",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "REY",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "BARRISSOFFEE",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          }
+        ]
+      },
+      {
+        "name": "RJT & Friends + Hermit Yoda",
+        "damage": "2000000",
+
+        "characters": [
+          {
+            "id": "REYJEDITRAINING",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Inspirational Presence"
+            ]
+          },
+          {
+            "id": "BB8",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Roll with the Punches"
+            ]
+          },
+          {
+            "id": "R2D2_LEGENDARY",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "REY",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "HERMITYODA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          }
         ]
       }
     ],
@@ -29,11 +266,255 @@
         "name": "Leia Spam",
         "damage": "1000000",
         "characters": [
-          "ADMIRALACKBAR",
-          "PRINCESSLEIA",
-          "GENERALKENOBI",
-          "SABINEWRENS3",
-          "BARRISSOFFEE"
+          {
+            "id": "ADMIRALACKBAR",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "PRINCESSLEIA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "GENERALKENOBI",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "SABINEWRENS3",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Demolish"
+            ]
+          },
+          {
+            "id": "BARRISSOFFEE",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Old Ben lead Wampa",
+        "damage": "1000000",
+        "characters": [
+          {
+            "id": "OLDBENKENOBI",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "GRANDADMIRALTHRAWN",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "SABINEWRENS3",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "GENERALKENOBI",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Demolish"
+            ]
+          },
+          {
+            "id": "WAMPA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Boba lead Wampa",
+        "damage": "1000000",
+        "characters": [
+          {
+            "id": "BOBAFETT",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "GRANDADMIRALTHRAWN",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "SABINEWRENS3",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "R2D2_LEGENDARY",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Demolish"
+            ]
+          },
+          {
+            "id": "WAMPA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Thrawnpers Without DT",
+        "damage": "1000000",
+        "characters": [
+          {
+            "id": "GRANDADMIRALTHRAWN",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "VEERS",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Aggressive Tactician"
+            ]
+          },
+          {
+            "id": "COLONELSTARCK",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "SHORETROOPER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Demolish"
+            ]
+          },
+          {
+            "id": "SNOWTROOPER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Phoenix",
+        "damage": "1000000",
+        "characters": [
+          {
+            "id": "HERASYNDULLAS3",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": [
+              "Play to Strength"
+            ]
+          },
+          {
+            "id": "SABINEWRENS3",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Demolish"
+            ]
+          },
+          {
+            "id": "ZEBS3",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Staggering Sweep"
+            ]
+          },
+          {
+            "id": "EZRABRIDGERS3",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Flourish"
+            ]
+          },
+          {
+            "id": "KANANJARRUSS3",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Total Defense"
+            ]
+          }
         ]
       }
     ]

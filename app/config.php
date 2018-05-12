@@ -18,6 +18,7 @@ $container->set('GuildList', [
 $container->set(Twig_Environment::class, function () {
     $loader = new Twig_Loader_Filesystem(__DIR__ . '/../src/Views');
     $twig = new Twig_Environment($loader, array('debug' => true));
+    $twig->addExtension(new Bataillon\Twig\SWGoH());
     $twig->addExtension(new Twig_Extension_Debug());
     return $twig;
 });
