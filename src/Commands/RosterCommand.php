@@ -58,16 +58,20 @@ class RosterCommand
              $characters[$char['base_id']] = $char;
          }
 
-        $this->render('index.html.twig', 'index.html', ['guilds' => $guildData]);
+        $this->render('index.html.twig', 'index.html', ['guilds' => $guildData, 'activeGuild' => '']);
 
         foreach ($guildData as $guild => $data) {
             $this->render('guildOverview.html.twig', $guild . '/index.html', [
-               'guildName' => $guild,
-               'guild' => $data,
+                'guilds' => $guildData,
+                'activeGuild' => $guild,
+                'guildName' => $guild,
+                'guild' => $data,
             ]);
 
             foreach ($data['member'] as $memberName => $memberData) {
                 $this->render('memberOverview.html.twig', $guild . '/' . $memberName .'/index.html', [
+                    'guilds' => $guildData,
+                    'activeGuild' => $guild,
                     'name' => $memberName,
                     'characters' => $memberData['characters'],
                     'raids' => $raids,
@@ -75,6 +79,8 @@ class RosterCommand
 
                 foreach ($raids as $raid => $teams) {
                     $this->render('raids/' . $raid . '.html.twig', $guild . '/' . $memberName . '/'. $raid .'.html', [
+                        'guilds' => $guildData,
+                        'activeGuild' => $guild,
                         'name' => $memberName,
                         'characters' => $characters,
                         'playerCharacters' => $memberData['characters'],
