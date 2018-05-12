@@ -517,6 +517,405 @@
           }
         ]
       }
+    ],
+    "p3": [
+      {
+        "name": "Chex Mix - JKA and Rex",
+        "damage": "1500000",
+        "characters": [
+          {
+            "id": "COMMANDERLUKESKYWALKER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": []
+          },
+          {
+            "id": "HANSOLO",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Shoots First"
+            ]
+          },
+          {
+            "id": "DEATHTROOPER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "ANAKINKNIGHT",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": []
+          },
+          {
+            "id": "CT7567",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          }
+        ]
+      },
+      {
+        "name": "Chex Mix - Pao and Rex",
+        "damage": "1500000",
+        "characters": [
+          {
+            "id": "COMMANDERLUKESKYWALKER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "HANSOLO",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Shoots First"
+            ]
+          },
+          {
+            "id": "DEATHTROOPER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "PAO",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "CT7567",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Chex Mix - JKA and Chirrut",
+        "damage": "1500000",
+        "characters": [
+          {
+            "id": "COMMANDERLUKESKYWALKER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": []
+          },
+          {
+            "id": "HANSOLO",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Shoots First"
+            ]
+          },
+          {
+            "id": "DEATHTROOPER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "ANAKINKNIGHT",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": []
+          },
+          {
+            "id": "CHIRRUTIMWE",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          }
+        ]
+      },
+      {
+        "name": "Chex Mix - Pao and Chirrut",
+        "damage": "1500000",
+        "characters": [
+          {
+            "id": "COMMANDERLUKESKYWALKER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": []
+          },
+          {
+            "id": "HANSOLO",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Shoots First"
+            ]
+          },
+          {
+            "id": "DEATHTROOPER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "PAO",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": []
+          },
+          {
+            "id": "CHIRRUTIMWE",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          }
+        ]
+      }
+    ],
+    "p4": [
+      {
+        "name": "Original Nightsisters",
+        "damage": "590000",
+        "characters": [
+          {
+            "id": "ASAJVENTRESS",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Nightsister Swiftness"
+            ]
+          },
+          {
+            "id": "DAKA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "TALIA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "NIGHTSISTERACOLYTE",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "NIGHTSISTERINITIATE",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          }
+        ]
+      },
+      {
+        "name": "Nightsisters with Zombie",
+        "damage": "1182000",
+        "characters": [
+          {
+            "id": "ASAJVENTRESS",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Nightsister Swiftness"
+            ]
+          },
+          {
+            "id": "DAKA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "TALIA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "NIGHTSISTERACOLYTE",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "NIGHTSISTERZOMBIE",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": []
+          }
+        ]
+      },
+      {
+        "name": "Nightsisters with Talzin",
+        "damage": "1182000",
+        "characters": [
+          {
+            "id": "ASAJVENTRESS",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Nightsister Swiftness"
+            ]
+          },
+          {
+            "id": "DAKA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "TALIA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "NIGHTSISTERACOLYTE",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "MOTHERTALZIN",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": []
+          }
+        ]
+      },
+      {
+        "name": "Nightsisters with Talzin + Zombie 1",
+        "damage": "177300",
+        "characters": [
+          {
+            "id": "ASAJVENTRESS",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Nightsister Swiftness"
+            ]
+          },
+          {
+            "id": "DAKA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "TALIA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "NIGHTSISTERZOMBIE",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "MOTHERTALZIN",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": []
+          }
+        ]
+      },
+      {
+        "name": "Nightsisters with Talzin + Zombie 2",
+        "damage": "177300",
+        "characters": [
+          {
+            "id": "ASAJVENTRESS",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Nightsister Swiftness"
+            ]
+          },
+          {
+            "id": "DAKA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "NIGHTSISTERACOLYTE",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "NIGHTSISTERZOMBIE",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "MOTHERTALZIN",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": []
+          }
+        ]
+      }
     ]
   }
 }
