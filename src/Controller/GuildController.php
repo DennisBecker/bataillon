@@ -96,31 +96,33 @@ class GuildController
             }
         }
 
-        foreach (array_shift($guildData) as $characterId => $memberCharacterData) {
-            foreach ($memberCharacterData as $character) {
-                if (!array_key_exists($character['player'], $playerCharacters)
-                    || !array_key_exists($characterId, $playerCharacters[$character['player']]['characters'])) {
-                    break;
-                }
+        if (!empty($guildData)) {
+            foreach (array_shift($guildData) as $characterId => $memberCharacterData) {
+                foreach ($memberCharacterData as $character) {
+                    if (!array_key_exists($character['player'], $playerCharacters)
+                        || !array_key_exists($characterId, $playerCharacters[$character['player']]['characters'])) {
+                        break;
+                    }
 
-                switch ($character['combat_type']) {
-                    case 1:
-                        $playerCharacters[$character['player']]['characters'][$characterId] += [
-                            'power_old' => $character['power'],
-                            'rarity_old' => $character['rarity'],
-                            'level_old' => $character['level'],
-                            'gear_old' => $character['gear_level'],
-                        ];
-                        break;
-                    case 2:
-                        $playerCharacters[$character['player']]['ships'][$characterId] += [
-                            'power_old' => $character['power'],
-                            'rarity_old' => $character['rarity'],
-                            'level_old' => $character['level'],
-                        ];
-                        break;
-                    default:
-                        throw new \InvalidArgumentException(sprintf('Combat type %d is UNKNOWN.', $character['combat_type']));
+                    switch ($character['combat_type']) {
+                        case 1:
+                            $playerCharacters[$character['player']]['characters'][$characterId] += [
+                                'power_old' => $character['power'],
+                                'rarity_old' => $character['rarity'],
+                                'level_old' => $character['level'],
+                                'gear_old' => $character['gear_level'],
+                            ];
+                            break;
+                        case 2:
+                            $playerCharacters[$character['player']]['ships'][$characterId] += [
+                                'power_old' => $character['power'],
+                                'rarity_old' => $character['rarity'],
+                                'level_old' => $character['level'],
+                            ];
+                            break;
+                        default:
+                            throw new \InvalidArgumentException(sprintf('Combat type %d is UNKNOWN.', $character['combat_type']));
+                    }
                 }
             }
         }

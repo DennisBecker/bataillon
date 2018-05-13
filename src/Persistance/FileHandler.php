@@ -3,13 +3,16 @@
 
 namespace Bataillon\Persistance;
 
-
 class FileHandler
 {
     const DATA_DIR = __DIR__ . '/../../data/';
 
     public function read($filename)
     {
+        if (!file_exists(static::DATA_DIR . $filename)) {
+            throw new FileNotFoundException("File not found: " . static::DATA_DIR .  $filename);
+        }
+
         return file_get_contents(static::DATA_DIR . $filename);
     }
 
@@ -20,18 +23,23 @@ class FileHandler
 
     public function readGuildDataOfLastTwoDataPoints($guild)
     {
-        $directories = new \DirectoryIterator(static::DATA_DIR . 'guilds');
+        $filesystemIterator = new \FilesystemIterator(static::DATA_DIR . 'guilds', \FilesystemIterator::SKIP_DOTS);
 
         $dataPoints = [];
-        foreach ($directories as $directory) {
-            if (!$directory->isDir() || $directory->isDot()) {
-                continue;
+        $dirCount = iterator_count($filesystemIterator);
+        $count = 1;
+        foreach ($filesystemIterator as $directory) {
+            if ($count === 1 || $count === $dirCount) {
+                try {
+                    $dataPoints[$directory->getFilename()] = json_decode($this->read('guilds/' . $directory->getFilename() . '/' . $guild . '.json'), true);
+                } catch (FileNotFoundException $e) {
+                }
             }
 
-            $dataPoints[$directory->getFilename()] = json_decode($this->read('guilds/' . $directory->getFilename() . '/' . $guild . '.json'), true);
+            $count++;
         }
 
-        return array_reverse($dataPoints, true);
+        return array_reverse($dataPoints, true);;
     }
 
     public function getLastModifiedDate($filename) : int
