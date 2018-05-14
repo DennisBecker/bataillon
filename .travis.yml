@@ -9,4 +9,4 @@ script:
   - php bataillon.php update
 
 after_success:
-  - push.sh
+  - ./push.sh
