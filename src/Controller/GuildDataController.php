@@ -36,6 +36,8 @@ class GuildDataController
         foreach (array_keys($this->guildList) as $guild) {
             $guildData[$guild]['member'] = $this->buildMemberData($guild);
             $guildData[$guild]['power'] = array_sum(array_column($guildData[$guild]['member'], 'power'));
+            $guildData[$guild]['power_characters'] = array_sum(array_column($guildData[$guild]['member'], 'power_characters'));
+            $guildData[$guild]['power_ships'] = array_sum(array_column($guildData[$guild]['member'], 'power_ships'));
         }
 
         uasort($guildData, function ($a, $b) {
@@ -62,6 +64,8 @@ class GuildDataController
                         'name' => $character['player'],
                         'collection_url' => $character['url'],
                         'power' => 0,
+                        'power_characters' => 0,
+                        'power_ships' => 0,
                         'guild' => $guild,
                         'characters' => [],
                         'ships' => [],
@@ -69,6 +73,7 @@ class GuildDataController
                 }
 
                 switch ($character['combat_type']) {
+                    // Characters
                     case 1:
                         $playerCharacters[$character['player']]['characters'][$characterId] = [
                             'power' => $character['power'],
@@ -79,7 +84,9 @@ class GuildDataController
                         ksort($playerCharacters[$character['player']]['characters']);
 
                         $playerCharacters[$character['player']]['power'] += $character['power'];
+                        $playerCharacters[$character['player']]['power_characters'] += $character['power'];
                         break;
+                    // Ships
                     case 2:
                         $playerCharacters[$character['player']]['ships'][$characterId] = [
                             'power' => $character['power'],
@@ -89,6 +96,7 @@ class GuildDataController
                         ksort($playerCharacters[$character['player']]['ships']);
 
                         $playerCharacters[$character['player']]['power'] += $character['power'];
+                        $playerCharacters[$character['player']]['power_ships'] += $character['power'];
                         break;
                     default:
                         throw new \InvalidArgumentException(sprintf('Combat type %d is UNKNOWN.',

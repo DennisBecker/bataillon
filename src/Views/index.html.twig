@@ -7,7 +7,9 @@
             <th scope="col">#</th>
             <th scope="col">Guild</th>
             <th scope="col">Member</th>
-            <th scope="col">Power</th>
+            <th scope="col">Galactic Power</th>
+            <th scope="col">Galactic Power (Characters)</th>
+            <th scope="col">Galactic Power (Ships)</th>
         </tr>
         </thead>
         <tbody>
@@ -17,6 +19,8 @@
                 <td><a href="/{{ guild|url_encode }}/index.html">{{ guild }}</a></td>
                 <td>{{ data.member|length }}</td>
                 <td>{{ data.power|number_format }}</td>
+                <td>{{ data.power_characters|number_format }}</td>
+                <td>{{ data.power_ships|number_format }}</td>
             </tr>
         {% endfor %}
         </tbody>
