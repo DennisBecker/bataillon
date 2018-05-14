@@ -92,6 +92,10 @@ class BuildStaticPagesCommand
             if ($fileInfo->isDir()) {
                 rmdir($filename);
             } else {
+                if ($fileInfo->getFilename() === '.gitkeep') {
+                    continue;
+                }
+
                 unlink($filename);
             }
         }
