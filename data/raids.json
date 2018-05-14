@@ -465,11 +465,54 @@
             ]
           }
         ]
+      },
+      {
+        "name": "First Order",
+        "damage": "1400000",
+        "characters": [
+          {
+            "id": "KYLORENUNMASKED",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": [
+              "Pursuit Mechanics"
+            ]
+          },
+          {
+            "id": "KYLOREN",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "FIRSTORDEROFFICERMALE",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "FIRSTORDEREXECUTIONER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "FIRSTORDERTROOPER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          }
+        ]
       }
     ],
     "p3": [
       {
-        "name": "Chex Mix - JKA and Rex",
+        "name": "Chex Mix",
         "damage": "1500000",
         "characters": [
           {
@@ -494,103 +537,9 @@
             "level": 85,
             "gear": 11,
             "zetas": []
-          },
-          {
-            "id": "ANAKINKNIGHT",
-            "rarity": 7,
-            "level": 85,
-            "gear": 8,
-            "zetas": []
-          },
-          {
-            "id": "CT7567",
-            "rarity": 7,
-            "level": 85,
-            "gear": 11,
-            "zetas": []
-          }
-        ]
-      },
-      {
-        "name": "Chex Mix - Pao and Rex",
-        "damage": "1500000",
-        "characters": [
-          {
-            "id": "COMMANDERLUKESKYWALKER",
-            "rarity": 7,
-            "level": 85,
-            "gear": 8,
-            "zetas": [
-
-            ]
-          },
-          {
-            "id": "HANSOLO",
-            "rarity": 7,
-            "level": 85,
-            "gear": 11,
-            "zetas": [
-              "Shoots First"
-            ]
-          },
-          {
-            "id": "DEATHTROOPER",
-            "rarity": 7,
-            "level": 85,
-            "gear": 11,
-            "zetas": [
-
-            ]
           },
           {
             "id": "PAO",
-            "rarity": 7,
-            "level": 85,
-            "gear": 8,
-            "zetas": [
-
-            ]
-          },
-          {
-            "id": "CT7567",
-            "rarity": 7,
-            "level": 85,
-            "gear": 11,
-            "zetas": [
-
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Chex Mix - JKA and Chirrut",
-        "damage": "1500000",
-        "characters": [
-          {
-            "id": "COMMANDERLUKESKYWALKER",
-            "rarity": 7,
-            "level": 85,
-            "gear": 8,
-            "zetas": []
-          },
-          {
-            "id": "HANSOLO",
-            "rarity": 7,
-            "level": 85,
-            "gear": 11,
-            "zetas": [
-              "Shoots First"
-            ]
-          },
-          {
-            "id": "DEATHTROOPER",
-            "rarity": 7,
-            "level": 85,
-            "gear": 11,
-            "zetas": []
-          },
-          {
-            "id": "ANAKINKNIGHT",
             "rarity": 7,
             "level": 85,
             "gear": 8,
@@ -606,7 +555,7 @@
         ]
       },
       {
-        "name": "Chex Mix - Pao and Chirrut",
+        "name": "CLS Mix - JKA and Rex",
         "damage": "1500000",
         "characters": [
           {
@@ -633,7 +582,101 @@
             "zetas": []
           },
           {
+            "id": "ANAKINKNIGHT",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": []
+          },
+          {
+            "id": "CT7567",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          }
+        ]
+      },
+      {
+        "name": "CLS Mix - Pao and Rex",
+        "damage": "1500000",
+        "characters": [
+          {
+            "id": "COMMANDERLUKESKYWALKER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "HANSOLO",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Shoots First"
+            ]
+          },
+          {
+            "id": "DEATHTROOPER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          },
+          {
             "id": "PAO",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": [
+
+            ]
+          },
+          {
+            "id": "CT7567",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+
+            ]
+          }
+        ]
+      },
+      {
+        "name": "CLS Mix - JKA and Chirrut",
+        "damage": "1500000",
+        "characters": [
+          {
+            "id": "COMMANDERLUKESKYWALKER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 8,
+            "zetas": []
+          },
+          {
+            "id": "HANSOLO",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Shoots First"
+            ]
+          },
+          {
+            "id": "DEATHTROOPER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "ANAKINKNIGHT",
             "rarity": 7,
             "level": 85,
             "gear": 8,
