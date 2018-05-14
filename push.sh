@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-now=$(date +"%m_%d_%Y")
+now=$(date +"%Y-%m-%d")
 
 git add --all --force .
 git commit --message "Updates guild data - $now"
