@@ -20,16 +20,17 @@
             {% if playerChar.rarity|default(0) >= character.rarity and playerChar.gear|default(0) >= character.gear and playerChar.level|default(0) >= character.level %}
                 {% set ready = 'green' %}
             {% endif %}
-        <tr>
-            <td class="{% if character.zetas|length > 0 %}bg-violet{% endif %}">{{ char.name }}</td>
-            <td class="bg-{{ getReadinessColor(character.rarity, playerChar.rarity|default(0)) }}">
-                {{ playerChar.rarity|default(0) }}
-                {% if playerChar.rarity_old is defined and playerChar.rarity - playerChar.rarity_old > 0 %} <span class="oi oi-arrow-top"></span>{{ playerChar.rarity - playerChar.rarity_old }}{% endif %}
-            </td>
-            <td class="bg-{{ getReadinessColor(character.gear, playerChar.gear|default(0)) }}">{{ playerChar.gear|default(0) }}</td>
-            <td class="bg-{{ getReadinessColor(character.level, playerChar.level|default(0)) }}">{{ playerChar.level|default(0) }}</td>
-            <td class="bg-{{ ready }}">{% if ready == 'red' %}No!{% else %}Yes!{% endif %}</td>
-        </tr>
+            <tr>
+                <td class="{% if character.zetas|length > 0 %}bg-violet{% endif %}">{{ char.name }}</td>
+                <td class="bg-{{ getReadinessColor(character.rarity, playerChar.rarity|default(0)) }}">
+                    {{ playerChar.rarity|default(0) }}
+                    {% if playerChar.rarity_old is defined and playerChar.rarity - playerChar.rarity_old > 0 %} <span
+                            class="oi oi-arrow-top"></span>{{ playerChar.rarity - playerChar.rarity_old }}{% endif %}
+                </td>
+                <td class="bg-{{ getReadinessColor(character.gear, playerChar.gear|default(0)) }}">{{ playerChar.gear|default(0) }}</td>
+                <td class="bg-{{ getReadinessColor(character.level, playerChar.level|default(0)) }}">{{ playerChar.level|default(0) }}</td>
+                <td class="bg-{{ ready }}">{% if ready == 'red' %}No!{% else %}Yes!{% endif %}</td>
+            </tr>
         {% endfor %}
         </tbody>
     </table>

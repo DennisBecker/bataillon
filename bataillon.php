@@ -6,9 +6,12 @@ $app = new Silly\Edition\PhpDi\Application();
 
 include_once __DIR__ . '/app/config.php';
 
-$app->command('update', Bataillon\Commands\RosterCommand::class);
-$app->setDefaultCommand('update');
+$app->command('update', Bataillon\Commands\UpdateRosterCommand::class);
+$app->command('build', Bataillon\Commands\BuildStaticPagesCommand::class);
 
-$app->run();
+$app->setDefaultCommand('build');
 
-exit(0);
+try {
+    $app->run();
+} catch (Exception $e) {
+}

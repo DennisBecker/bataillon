@@ -8,9 +8,9 @@
     {% for phase, teams in raidTeams %}
         <h3 class="section-bar">Phase {{ loop.index }}</h3>
         <div class="row">
-        {% for team in teams %}
-            {% include 'raids/raidTeamTable.html.twig' %}
-        {% endfor %}
+            {% for team in teams %}
+                {% include 'raids/raidTeamTable.html.twig' %}
+            {% endfor %}
         </div>
     {% endfor %}
 {% endblock %}

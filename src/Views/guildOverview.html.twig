@@ -6,23 +6,24 @@
     </div>
 
     <table class="table table-striped table-hover table-sm">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Guild</th>
-        <th scope="col">Power</th>
-        <th scope="col">Characters</th>
-    </tr>
-    </thead>
-    <tbody>
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Guild</th>
+            <th scope="col">Power</th>
+            <th scope="col">Characters</th>
+        </tr>
+        </thead>
+        <tbody>
         {% for member in guild.member %}
             <tr>
                 <th scope="row">{{ loop.index }}</th>
-                <td><a href="/{{ guildName|url_encode }}/{{ member.name|url_encode }}/index.html">{{ member.name }}</a></td>
+                <td><a href="/{{ guildName|url_encode }}/{{ member.name|url_encode }}/index.html">{{ member.name }}</a>
+                </td>
                 <td>{{ member.power|number_format }}</td>
                 <td>{{ member.characters|length }}</td>
             </tr>
         {% endfor %}
-    </tbody>
+        </tbody>
     </table>
 {% endblock %}

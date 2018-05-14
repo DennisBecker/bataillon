@@ -6,7 +6,7 @@ namespace Bataillon\Controller;
 use Bataillon\Mapper\CharactersMapper;
 use Bataillon\Persistance\FileHandler;
 
-class GuildController
+class GuildDataController
 {
     /**
      * @var FileHandler
@@ -38,8 +38,8 @@ class GuildController
             $guildData[$guild]['power'] = array_sum(array_column($guildData[$guild]['member'], 'power'));
         }
 
-        uasort($guildData, function($a, $b) {
-           return $a['power'] < $b['power'];
+        uasort($guildData, function ($a, $b) {
+            return $a['power'] < $b['power'];
         });
 
         return $guildData;
@@ -91,7 +91,8 @@ class GuildController
                         $playerCharacters[$character['player']]['power'] += $character['power'];
                         break;
                     default:
-                        throw new \InvalidArgumentException(sprintf('Combat type %d is UNKNOWN.', $character['combat_type']));
+                        throw new \InvalidArgumentException(sprintf('Combat type %d is UNKNOWN.',
+                            $character['combat_type']));
                 }
             }
         }
@@ -121,13 +122,14 @@ class GuildController
                             ];
                             break;
                         default:
-                            throw new \InvalidArgumentException(sprintf('Combat type %d is UNKNOWN.', $character['combat_type']));
+                            throw new \InvalidArgumentException(sprintf('Combat type %d is UNKNOWN.',
+                                $character['combat_type']));
                     }
                 }
             }
         }
 
-        uasort($playerCharacters, function($a, $b) {
+        uasort($playerCharacters, function ($a, $b) {
             return $a['power'] < $b['power'];
         });
 

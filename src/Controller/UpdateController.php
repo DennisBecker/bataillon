@@ -103,6 +103,6 @@ class UpdateController
             throw new \RuntimeException($e);
         }
 
-        return $date->setTime(0, 0, 0,0)->getTimestamp();
+        return $date->setTime(0, 0, 0, 0)->getTimestamp();
     }
 }

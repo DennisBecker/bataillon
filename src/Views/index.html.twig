@@ -11,14 +11,14 @@
         </tr>
         </thead>
         <tbody>
-    {% for guild, data in guilds %}
-        <tr>
-            <th scope="row">{{ loop.index }}</th>
-            <td><a href="/{{ guild|url_encode }}/index.html">{{ guild }}</a></td>
-            <td>{{ data.member|length }}</td>
-            <td>{{ data.power|number_format }}</td>
-        </tr>
-    {% endfor %}
+        {% for guild, data in guilds %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td><a href="/{{ guild|url_encode }}/index.html">{{ guild }}</a></td>
+                <td>{{ data.member|length }}</td>
+                <td>{{ data.power|number_format }}</td>
+            </tr>
+        {% endfor %}
         </tbody>
     </table>
 {% endblock %}

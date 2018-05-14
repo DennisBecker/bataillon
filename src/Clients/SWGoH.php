@@ -5,7 +5,6 @@ namespace Bataillon\Clients;
 
 
 use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Pool;
 
 class SWGoH
 {
