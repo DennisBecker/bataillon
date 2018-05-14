@@ -75,7 +75,7 @@ class UpdateController
             throw new \RuntimeException($e);
         }
 
-        if ($today->diff($lastUpdate)->days === 0) {
+        if ((int)$today->format('w') !== 1 || $today->diff($lastUpdate)->days < 7) {
             return;
         }
 
