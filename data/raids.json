@@ -774,7 +774,7 @@
             "id": "MOTHERTALZIN",
             "rarity": 7,
             "level": 85,
-            "gear": 8,
+            "gear": 11,
             "zetas": []
           }
         ]
@@ -807,14 +807,14 @@
             "zetas": []
           },
           {
-            "id": "NIGHTSISTERZOMBIE",
+            "id": "MOTHERTALZIN",
             "rarity": 7,
             "level": 85,
             "gear": 11,
             "zetas": []
           },
           {
-            "id": "MOTHERTALZIN",
+            "id": "NIGHTSISTERZOMBIE",
             "rarity": 7,
             "level": 85,
             "gear": 8,
@@ -850,14 +850,14 @@
             "zetas": []
           },
           {
-            "id": "NIGHTSISTERZOMBIE",
+            "id": "MOTHERTALZIN",
             "rarity": 7,
             "level": 85,
             "gear": 11,
             "zetas": []
           },
           {
-            "id": "MOTHERTALZIN",
+            "id": "NIGHTSISTERZOMBIE",
             "rarity": 7,
             "level": 85,
             "gear": 8,
