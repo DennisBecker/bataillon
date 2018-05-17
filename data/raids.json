@@ -907,6 +907,47 @@
             "zetas": []
           }
         ]
+      },
+      {
+        "name": "First Order",
+        "damage": "",
+        "characters": [
+          {
+            "id": "KYLORENUNMASKED",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "FIRSTORDERTROOPER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "FIRSTORDERTIEPILOT",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "FIRSTORDEREXECUTIONER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "KYLOREN",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          }
+        ]
       }
     ]
   }
