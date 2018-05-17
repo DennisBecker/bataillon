@@ -26,9 +26,22 @@ class FileHandler
             }
         }
 
-        ksort($dataPoints);
+        uksort($dataPoints, function($a, $b) {
+            $dateA = new \DateTimeImmutable($a);
+            $dateB = new \DateTimeImmutable($b);
 
-        return array_slice(array_reverse($dataPoints, true), 0, 2);
+            if ($dateA < $dateB) {
+                return 1;
+            }
+
+            if ($dateA > $dateB) {
+                return -1;
+            }
+
+            return 0;
+        });
+
+        return array_slice($dataPoints, 0, 2);
     }
 
     public function read($filename)
