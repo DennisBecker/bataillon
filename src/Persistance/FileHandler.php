@@ -17,21 +17,18 @@ class FileHandler
         $filesystemIterator = new \FilesystemIterator(static::DATA_DIR . 'guilds', \FilesystemIterator::SKIP_DOTS);
 
         $dataPoints = [];
-        $dirCount = iterator_count($filesystemIterator);
-        $count = 1;
         foreach ($filesystemIterator as $directory) {
-            if ($count === 1 || $count === $dirCount) {
-                try {
-                    $dataPoints[$directory->getFilename()] = json_decode($this->read('guilds/' . $directory->getFilename() . '/' . $guild . '.json'),
-                        true);
-                } catch (FileNotFoundException $e) {
-                }
-            }
+            try {
+                $dataPoints[$directory->getFilename()] = json_decode($this->read('guilds/' . $directory->getFilename() . '/' . $guild . '.json'),
+                    true);
+            } catch (FileNotFoundException $e) {
 
-            $count++;
+            }
         }
 
-        return array_reverse($dataPoints, true);;
+        ksort($dataPoints);
+
+        return array_slice(array_reverse($dataPoints, true), 0, 2);
     }
 
     public function read($filename)
