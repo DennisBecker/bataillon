@@ -35,13 +35,13 @@ class UpdateController
         $this->guildList = $guildList;
     }
 
-    public function __invoke(ProgressBar $progressBar)
+    public function __invoke(ProgressBar $progressBar, $forceUpdate)
     {
         $progressBar->start();
 
         $this->updateCharacters($progressBar);
         $this->updateShips($progressBar);
-        $this->updateGuilds($progressBar);
+        $this->updateGuilds($progressBar, $forceUpdate);
 
         $progressBar->finish();
     }
@@ -64,7 +64,7 @@ class UpdateController
         $progressBar->advance();
     }
 
-    private function updateGuilds(ProgressBar $progressBar)
+    private function updateGuilds(ProgressBar $progressBar, $forceUpdate)
     {
         $updates = json_decode($this->fileHandler->read('updates.json'), true);
         try {
@@ -75,7 +75,7 @@ class UpdateController
             throw new \RuntimeException($e);
         }
 
-        if ((int)$today->format('w') !== 1 || $today->diff($lastUpdate)->days < 7) {
+        if (!$forceUpdate && ((int)$today->format('w') !== 1 || $today->diff($lastUpdate)->days < 7)) {
             return;
         }
 

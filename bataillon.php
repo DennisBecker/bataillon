@@ -6,10 +6,13 @@ $app = new Silly\Edition\PhpDi\Application();
 
 include_once __DIR__ . '/app/config.php';
 
-$app->command('update', Bataillon\Commands\UpdateRosterCommand::class);
-$app->command('build', Bataillon\Commands\BuildStaticPagesCommand::class);
-
-$app->setDefaultCommand('build');
+$app->command('update [--force]', Bataillon\Commands\UpdateRosterCommand::class)
+    ->descriptions('Update characters, ships and guild data', [
+        '--force' => 'Run update without last update check',
+    ])
+;
+$app->command('build', Bataillon\Commands\BuildStaticPagesCommand::class)
+    ->descriptions('Build static pages');
 
 try {
     $app->run();
