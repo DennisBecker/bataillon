@@ -56,6 +56,16 @@ class BuildStaticPagesCommand
                 'guild' => $data,
             ]);
 
+            foreach ($raids as $raid => $teams) {
+                $this->render('raids/sithOverview.html.twig', $guild . '/' . $raid . '.html', [
+                    'guilds' => $guildData,
+                    'activeGuild' => $guild,
+                    'guildName' => $guild,
+                    'members' => $data['member'],
+                    'raidTeams' => $teams,
+                ]);
+            }
+
             foreach ($data['member'] as $memberName => $memberData) {
                 $this->render('memberOverview.html.twig', $guild . '/' . $memberName . '/index.html', [
                     'guilds' => $guildData,

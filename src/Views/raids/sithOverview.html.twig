@@ -1,0 +1,35 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+        <h1 class="h2">{{ guild }} Overview - Sith Triumvirate Teams</h1>
+    </div>
+
+    <div class="row">
+        <table class="table table-striped table-hover table-sm table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">Player</th>
+
+                {% for phase in raidTeams %}
+                    {% for team in phase %}
+                        <th><nobr>{{ team.name }}</nobr></th>
+                    {% endfor %}
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+                {% for member in members %}
+                    <tr>
+                        <td>{{ member.name }}</td>
+                        {% for phase in raidTeams %}
+                            {% for team in phase %}
+                                <td>{% include 'raids/raidTeamTable.html.twig' %}</td>
+                            {% endfor %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
