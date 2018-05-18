@@ -3,6 +3,12 @@ body {
     font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+thead th {
+    position: sticky;
+    top: 39px;
+    background-color: rgb(221, 221, 221);
+}
+
 .bg-green {
     background-color: rgb(135, 220, 103);
 }
