@@ -9,40 +9,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css"/>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/swgoh.css"/>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <style>{% include 'styles/swgoh.css' %}</style>
 </head>
 <body>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">Bataillon</a>
+    <span class="navbar-brand">
+        <a class="" href="/">Bataillon</a>
+        {% if activeGuild is defined %} > <a class="" href="/{{ activeGuild|url_encode }}/index.html">{{ activeGuild }}</a>{% endif %}
+        {% if raid is defined and not memberName is defined %} > <a class="" href="/{{ activeGuild|url_encode }}/{{ raid|url_encode }}.html">{{ raid }}</a>{% endif %}
+        {% if memberName is defined %} > <a class="" href="/{{ activeGuild|url_encode }}/{{ memberName|url_encode }}/index.html">{{ memberName }}</a>{% endif %}
+        {% if raid is defined and memberName is defined %} > <a class="" href="/{{ activeGuild|url_encode }}/{{ memberName|url_encode }}/{{ raid|url_encode }}.html">{{ raid }}</a>{% endif %}
+    </span>
 </nav>
 <div class="container-fluid">
     <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-            <div class="sidebar-sticky">
-                <ul class="nav flex-column">
-                    {% for guild in guilds|keys %}
-                        <li class="nav-item">
-                            <a class="nav-link{% if guild == activeGuild %} active{% endif %}"
-                               href="/{{ guild|url_encode }}/index.html">{{ guild }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-
-                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                    <span>Guides</span>
-                </h6>
-                <ul class="nav flex-column mb-2">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Guide 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Guide 2</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <main role="main" class="col-12">
             {% block content %}{% endblock %}
         </main>
     </div>

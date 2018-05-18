@@ -19,6 +19,15 @@ body {
     background-color: rgb(222, 207, 98);
 }
 
+span.navbar-brand {
+    margin-left: 1rem;
+}
+
+span.navbar-brand a {
+    color: white;
+    text-decoration: none;
+}
+
 [role="main"] {
     padding-top: 48px;
 }

@@ -8,6 +8,10 @@
     "mnapoli/silly-php-di": "^1.2",
     "twig/twig": "^2.4"
   },
+  "require-dev": {
+    "consolidation/robo": "^1.0.0",
+    "henrikbjorn/lurker": "^1.2.0"
+  },
   "autoload": {
     "psr-4": {
       "Bataillon\\": "src/"

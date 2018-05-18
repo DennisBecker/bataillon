@@ -1,0 +1,33 @@
+{% set readiness = 'green' %}
+{% set details = '' %}
+
+{% for character in team.characters %}
+    {% set char = attribute(characters, character.id) %}
+    {% set playerChar = attribute(playerCharacters, character.id) %}
+
+    {% if playerChar.rarity|default(0) < character.rarity and readiness != 'red' %}
+        {% set readiness = 'red' %}
+    {% endif %}
+
+    {% if playerChar.gear|default(0) < character.gear and readiness == 'green' %}
+        {% set readiness = 'yellow' %}
+    {% endif %}
+{% endfor %}
+
+<td class="bg-{{ readiness }}">
+    {% set counter = 0 %}
+    {% for character in team.characters %}
+        {% set char = attribute(characters, character.id) %}
+        {% set playerChar = attribute(playerCharacters, character.id) %}
+
+        {% if playerChar.rarity|default(0) < character.rarity %}
+            {% if counter > 0 %}<br>{% endif %}
+            {{ char.name }}: {{ playerChar.rarity|default(0) }}*
+            {% set counter = counter + 1 %}
+        {% elseif playerChar.gear|default(0) < character.gear %}
+            {% if counter > 0 %}<br>{% endif %}
+            {{ char.name }}: G{{ playerChar.gear|default(0) }}
+            {% set counter = counter + 1 %}
+        {% endif %}
+    {% endfor %}
+</td>

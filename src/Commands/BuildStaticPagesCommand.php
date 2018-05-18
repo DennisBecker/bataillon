@@ -24,8 +24,6 @@ class BuildStaticPagesCommand
 
     private $distPath = __DIR__ . '/../../dist/';
 
-    private $webSourcePath = __DIR__ . '/../../app/src/';
-
     public function __construct(\Twig_Environment $twig)
     {
         $this->twig = $twig;
@@ -37,7 +35,6 @@ class BuildStaticPagesCommand
         $guildData = $container->call(GuildDataController::class);
 
         $this->cleanOutputDirectory();
-        $this->copyWebSourceFiles();
 
         $fileHandler = new FileHandler();
         $raids = json_decode($fileHandler->read('raids.json'), true);
@@ -61,7 +58,9 @@ class BuildStaticPagesCommand
                     'guilds' => $guildData,
                     'activeGuild' => $guild,
                     'guildName' => $guild,
+                    'characters' => $characters,
                     'members' => $data['member'],
+                    'raid' => $raid,
                     'raidTeams' => $teams,
                 ]);
             }
@@ -70,7 +69,7 @@ class BuildStaticPagesCommand
                 $this->render('memberOverview.html.twig', $guild . '/' . $memberName . '/index.html', [
                     'guilds' => $guildData,
                     'activeGuild' => $guild,
-                    'name' => $memberName,
+                    'memberName' => $memberName,
                     'characters' => $memberData['characters'],
                     'raids' => $raids,
                 ]);
@@ -79,7 +78,7 @@ class BuildStaticPagesCommand
                     $this->render('raids/' . $raid . '.html.twig', $guild . '/' . $memberName . '/' . $raid . '.html', [
                         'guilds' => $guildData,
                         'activeGuild' => $guild,
-                        'name' => $memberName,
+                        'memberName' => $memberName,
                         'characters' => $characters,
                         'playerCharacters' => $memberData['characters'],
                         'raid' => $raid,
@@ -107,23 +106,6 @@ class BuildStaticPagesCommand
                 }
 
                 unlink($filename);
-            }
-        }
-    }
-
-    protected function copyWebSourceFiles()
-    {
-        $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->webSourcePath,
-            \FilesystemIterator::SKIP_DOTS), \RecursiveIteratorIterator::SELF_FIRST);
-        /**
-         * @var string $filename
-         * @var \SplFileInfo $fileInfo
-         */
-        foreach ($iterator as $item) {
-            if ($item->isDir()) {
-                mkdir($this->distPath . $iterator->getSubPathName(), 0777, true);
-            } else {
-                copy($item, $this->distPath . $iterator->getSubPathName());
             }
         }
     }
