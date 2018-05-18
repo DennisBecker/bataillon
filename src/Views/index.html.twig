@@ -18,9 +18,21 @@
                 <th scope="row">{{ loop.index }}</th>
                 <td><a href="/{{ guild|url_encode }}/index.html">{{ guild }}</a></td>
                 <td>{{ data.member|length }}</td>
-                <td>{{ data.power|number_format }}</td>
-                <td>{{ data.power_characters|number_format }}</td>
-                <td>{{ data.power_ships|number_format }}</td>
+                <td>
+                    {{ data.power|number_format }}
+                    {% if data.power_old > 0 and data.power - data.power_old > 0 %} <span
+                            class="oi oi-arrow-top"></span>{{ (data.power - data.power_old)|number_format }}{% endif %}
+                </td>
+                <td>
+                    {{ data.power_characters|number_format }}
+                    {% if data.power_characters_old > 0 and data.power_characters - data.power_characters_old > 0 %} <span
+                            class="oi oi-arrow-top"></span>{{ (data.power_characters - data.power_characters_old)|number_format }}{% endif %}
+                </td>
+                <td>
+                    {{ data.power_ships|number_format }}
+                    {% if data.power_ships_old > 0 and data.power_ships - data.power_ships_old > 0 %} <span
+                            class="oi oi-arrow-top"></span>{{ (data.power_ships - data.power_ships_old)|number_format }}{% endif %}
+                </td>
             </tr>
         {% endfor %}
         </tbody>

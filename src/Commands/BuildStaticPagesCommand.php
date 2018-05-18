@@ -43,7 +43,7 @@ class BuildStaticPagesCommand
             $characters[$char['base_id']] = $char;
         }
 
-        $this->render('index.html.twig', 'index.html', ['guilds' => $guildData, 'activeGuild' => '']);
+        $this->render('index.html.twig', 'index.html', ['guilds' => $guildData]);
 
         foreach ($guildData as $guild => $data) {
             $this->render('guildOverview.html.twig', $guild . '/index.html', [
