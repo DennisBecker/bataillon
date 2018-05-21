@@ -2,6 +2,6 @@
 
 now=$(date +"%Y-%m-%d")
 
-git add --all --force .
+git add --all --force data/
 git commit --message "Updates guild data - $now"
 git push --quiet "https://${GITHUB_TOKEN}@github.com/DennisBecker/bataillon.git" HEAD:master
