@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Bataillon\Controller;
-
 
 use Bataillon\Clients\SWGoH;
 use Bataillon\Persistance\FileHandler;
@@ -66,16 +64,14 @@ class UpdateController
 
     private function updateGuilds(ProgressBar $progressBar, $forceUpdate)
     {
-        $updates = json_decode($this->fileHandler->read('updates.json'), true);
         try {
             $timeZone = new \DateTimeZone('Europe/Berlin');
-            $lastUpdate = new \DateTimeImmutable($updates['lastUpdated'], $timeZone);
             $today = new \DateTimeImmutable('now', $timeZone);
         } catch (\Exception $e) {
             throw new \RuntimeException($e);
         }
 
-        if (!$forceUpdate && ((int)$today->format('w') !== 1 || $today->diff($lastUpdate)->days < 7)) {
+        if (!$forceUpdate && (int)$today->format('w') !== 1) {
             return;
         }
 
@@ -90,19 +86,5 @@ class UpdateController
 
             $progressBar->advance();
         }
-
-        $updates['lastUpdated'] = $today->format('Y-m-d');
-        $this->fileHandler->write('updates.json', json_encode($updates));
-    }
-
-    private function getTimeStampOfTodaysMidnight()
-    {
-        try {
-            $date = new \DateTimeImmutable('now', new \DateTimeZone('Europe/Berlin'));
-        } catch (\Exception $e) {
-            throw new \RuntimeException($e);
-        }
-
-        return $date->setTime(0, 0, 0, 0)->getTimestamp();
     }
 }
