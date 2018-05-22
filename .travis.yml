@@ -6,7 +6,7 @@ install:
   - composer install
 
 script:
-  - php bataillon.php update
+  - php bataillon.php update --remove-outdated
 
 after_success:
   - ./push.sh
