@@ -37,10 +37,14 @@ $container->set(\Bataillon\Controller\UpdateController::class, new \Bataillon\Co
     $container->get('GuildList')
 ));
 
+$container->set(\Bataillon\Models\GuildDataModel::class, new \Bataillon\Models\GuildDataModel(
+    $container->get(\Bataillon\Persistance\FileHandler::class)
+));
+
 $container->set(\Bataillon\Controller\GuildDataController::class, new \Bataillon\Controller\GuildDataController(
-    $container->get(\Bataillon\Persistance\FileHandler::class),
+    $container->get(\Bataillon\Models\GuildDataModel::class),
     $container->get(\Bataillon\Mapper\CharactersMapper::class),
-    $container->get('GuildList')
+    $container->get(\Bataillon\Persistance\FileHandler::class)
 ));
 
 $container->set(\Bataillon\Mapper\CharactersMapper::class, new \Bataillon\Mapper\CharactersMapper(

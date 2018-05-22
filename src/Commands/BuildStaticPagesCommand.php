@@ -22,52 +22,65 @@ class BuildStaticPagesCommand
      */
     private $twig;
 
+    /**
+     * @var FileHandler
+     */
+    private $fileHandler;
+
     private $distPath = __DIR__ . '/../../dist/';
 
-    public function __construct(\Twig_Environment $twig)
+    public function __construct(\Twig_Environment $twig, FileHandler $fileHandler)
     {
         $this->twig = $twig;
+        $this->fileHandler = $fileHandler;
     }
 
     public function __invoke(OutputInterface $output, ContainerInterface $container)
     {
         $this->output = $output;
-        $guildData = $container->call(GuildDataController::class);
+        $this->fileHandler->clearDirectory($this->distPath);
 
-        $fileHandler = new FileHandler();
-        $fileHandler->clearDirectory($this->distPath);
+        $dataPointData = $container->call(GuildDataController::class);
 
-        $raids = json_decode($fileHandler->read('raids.json'), true);
-        $characters = [];
-        foreach (json_decode($fileHandler->read('characters.json'), true) as $char) {
-            $characters[$char['base_id']] = $char;
-        }
+        list($currentGuildData, $comparingGuildData, $currentPlayerData, $comparingPlayerData) = [
+            $dataPointData['currentGuildData'],
+            $dataPointData['comparingGuildData'],
+            $dataPointData['currentPlayerData'],
+            $dataPointData['comparingPlayerData'],
+        ];
 
-        $this->render('index.html.twig', 'index.html', ['guilds' => $guildData]);
+        $raids = $this->getRaidData();
+        $characters = $this->getCharacterData();
 
-        foreach ($guildData as $guild => $data) {
+        $this->render('index.html.twig', 'index.html', [
+            'guilds' => $currentGuildData,
+            'comparingGuildData' => $comparingGuildData
+        ]);
+
+        foreach ($currentPlayerData as $guild => $members) {
             $this->render('guildOverview.html.twig', $guild . '/index.html', [
-                'guilds' => $guildData,
+                'guilds' => $currentGuildData,
                 'activeGuild' => $guild,
                 'guildName' => $guild,
-                'guild' => $data,
+                'members' => $members,
+                'comparingPlayerData' => $comparingPlayerData,
             ]);
 
             foreach ($raids as $raid => $teams) {
                 $this->render('raids/sithOverview.html.twig', $guild . '/' . $raid . '.html', [
-                    'guilds' => $guildData,
+                    'guilds' => $currentGuildData,
                     'activeGuild' => $guild,
                     'guildName' => $guild,
                     'characters' => $characters,
-                    'members' => $data['member'],
+                    'members' => $members,
                     'raid' => $raid,
                     'raidTeams' => $teams,
                 ]);
             }
-
+/*
             foreach ($data['member'] as $memberName => $memberData) {
                 $this->render('memberOverview.html.twig', $guild . '/' . $memberName . '/index.html', [
-                    'guilds' => $guildData,
+                    'guilds' => $currentGuildData,
                     'activeGuild' => $guild,
                     'memberName' => $memberName,
                     'characters' => $memberData['characters'],
@@ -86,6 +99,7 @@ class BuildStaticPagesCommand
                     ]);
                 }
             }
+*/
         }
     }
 
@@ -102,5 +116,25 @@ class BuildStaticPagesCommand
             $this->output->write($e->getMessage());
             throw new \RuntimeException($e);
         }
+    }
+
+    /**
+     * @return array
+     */
+    protected function getRaidData(): array
+    {
+        return json_decode($this->fileHandler->read('raids.json'), true);
+    }
+
+    /**
+     * @return array
+     */
+    protected function getCharacterData(): array
+    {
+        $characters = [];
+        foreach (json_decode($this->fileHandler->read('characters.json'), true) as $char) {
+            $characters[$char['base_id']] = $char;
+        }
+        return $characters;
     }
 }
