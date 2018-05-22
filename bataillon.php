@@ -6,7 +6,7 @@ $app = new Silly\Edition\PhpDi\Application();
 
 include_once __DIR__ . '/app/config.php';
 
-$app->command('update [--force]', Bataillon\Commands\UpdateRosterCommand::class)
+$app->command('update [--remove-outdated] [--force]', Bataillon\Commands\UpdateRosterCommand::class)
     ->descriptions('Update characters, ships and guild data', [
         '--force' => 'Run update without last update check',
     ])

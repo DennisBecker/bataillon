@@ -34,9 +34,9 @@ class BuildStaticPagesCommand
         $this->output = $output;
         $guildData = $container->call(GuildDataController::class);
 
-        $this->cleanOutputDirectory();
-
         $fileHandler = new FileHandler();
+        $fileHandler->clearDirectory($this->distPath);
+
         $raids = json_decode($fileHandler->read('raids.json'), true);
         $characters = [];
         foreach (json_decode($fileHandler->read('characters.json'), true) as $char) {
@@ -85,27 +85,6 @@ class BuildStaticPagesCommand
                         'raidTeams' => $teams,
                     ]);
                 }
-            }
-        }
-    }
-
-    protected function cleanOutputDirectory()
-    {
-        $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->distPath,
-            \FilesystemIterator::SKIP_DOTS), \RecursiveIteratorIterator::CHILD_FIRST);
-        /**
-         * @var string $filename
-         * @var \SplFileInfo $fileInfo
-         */
-        foreach ($iterator as $filename => $fileInfo) {
-            if ($fileInfo->isDir()) {
-                rmdir($filename);
-            } else {
-                if ($fileInfo->getFilename() === '.gitkeep') {
-                    continue;
-                }
-
-                unlink($filename);
             }
         }
     }

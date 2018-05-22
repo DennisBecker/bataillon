@@ -53,21 +53,36 @@ class FileHandler
         return file_get_contents(static::DATA_DIR . $filename);
     }
 
-    public function getLastModifiedDate($filename): int
-    {
-        $fileInfo = new \SplFileInfo(static::DATA_DIR . $filename);
-
-        if ($fileInfo->isFile()) {
-            return $fileInfo->getMTime();
-        }
-
-        return 0;
-    }
-
     public function createDirectory($path)
     {
         if (!file_exists(static::DATA_DIR . $path)) {
             mkdir(static::DATA_DIR . $path, 0777, true);
         }
+    }
+
+    public function clearDirectory($directoryPath)
+    {
+        $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($directoryPath,
+            \FilesystemIterator::SKIP_DOTS), \RecursiveIteratorIterator::CHILD_FIRST);
+        /**
+         * @var string $filename
+         * @var \SplFileInfo $fileInfo
+         */
+        foreach ($iterator as $filename => $fileInfo) {
+            if ($fileInfo->isDir()) {
+                rmdir($filename);
+            } else {
+                if ($fileInfo->getFilename() === '.gitkeep') {
+                    continue;
+                }
+
+                unlink($filename);
+            }
+        }
+    }
+
+    public function removeDirectory($directoryPath)
+    {
+        rmdir($directoryPath);
     }
 }

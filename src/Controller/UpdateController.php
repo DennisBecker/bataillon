@@ -10,6 +10,7 @@ class UpdateController
 {
     const CHARACTERS_FILENAME = 'characters.json';
     const SHIPS_FILENAME = 'ships.json';
+    const DATA_DIR = __DIR__ . '/../../data/';
 
     /**
      * @var SWGoH
@@ -33,15 +34,27 @@ class UpdateController
         $this->guildList = $guildList;
     }
 
-    public function __invoke(ProgressBar $progressBar, $forceUpdate)
+    /**
+     * @param ProgressBar $progressBar
+     * @param bool $removeOutdated
+     * @param bool $forceUpdate
+     */
+    public function __invoke(ProgressBar $progressBar, $removeOutdated, $forceUpdate)
     {
         $progressBar->start();
 
         $this->updateCharacters($progressBar);
         $this->updateShips($progressBar);
-        $this->updateGuilds($progressBar, $forceUpdate);
+
+        $today = $this->getCurrentDateTime();
+
+        if ($forceUpdate || (int)$today->format('w') === 1) {
+            $this->updateGuilds($progressBar);
+        }
 
         $progressBar->finish();
+
+        $this->removeOutdatedGuildData($removeOutdated);
     }
 
     private function updateCharacters(ProgressBar $progressBar)
@@ -62,20 +75,9 @@ class UpdateController
         $progressBar->advance();
     }
 
-    private function updateGuilds(ProgressBar $progressBar, $forceUpdate)
+    private function updateGuilds(ProgressBar $progressBar)
     {
-        try {
-            $timeZone = new \DateTimeZone('Europe/Berlin');
-            $today = new \DateTimeImmutable('now', $timeZone);
-        } catch (\Exception $e) {
-            throw new \RuntimeException($e);
-        }
-
-        if (!$forceUpdate && (int)$today->format('w') !== 1) {
-            return;
-        }
-
-        $currentGuildDir = 'guilds/' . $today->format('Y-m-d') . '/';
+        $currentGuildDir = 'guilds/' . $this->getCurrentDateTime()->format('Y-m-d') . '/';
         $this->fileHandler->createDirectory($currentGuildDir);
 
         foreach ($this->guildList as $guild => $uri) {
@@ -86,5 +88,56 @@ class UpdateController
 
             $progressBar->advance();
         }
+    }
+
+    /**
+     * @param bool $removeOutdated
+     */
+    private function removeOutdatedGuildData($removeOutdated)
+    {
+        if (!$removeOutdated) {
+            return;
+        }
+
+        $filesystemIterator = new \FilesystemIterator(static::DATA_DIR . 'guilds', \FilesystemIterator::SKIP_DOTS);
+
+        $guildDataDirectories = [];
+        foreach ($filesystemIterator as $directory) {
+            $guildDataDirectories[] = $directory->getFilename();
+        }
+
+        usort($guildDataDirectories, function($a, $b) {
+            $dateA = new \DateTimeImmutable($a);
+            $dateB = new \DateTimeImmutable($b);
+
+            if ($dateA < $dateB) {
+                return 1;
+            }
+
+            if ($dateA > $dateB) {
+                return -1;
+            }
+
+            return 0;
+        });
+
+        foreach (array_slice($guildDataDirectories, 2) as $deletableDir) {
+            $this->fileHandler->clearDirectory(static::DATA_DIR . 'guilds/' . $deletableDir);
+            $this->fileHandler->removeDirectory(static::DATA_DIR . 'guilds/' . $deletableDir);
+        }
+    }
+
+    /**
+     * @return \DateTimeImmutable
+     */
+    protected function getCurrentDateTime(): \DateTimeImmutable
+    {
+        try {
+            $timeZone = new \DateTimeZone('Europe/Berlin');
+            $today = new \DateTimeImmutable('now', $timeZone);
+        } catch (\Exception $e) {
+            throw new \RuntimeException($e);
+        }
+        return $today;
     }
 }
