@@ -117,7 +117,7 @@ class GuildDataController
                     if (!array_key_exists($character['player'], $playerCharacters)
                         || (!array_key_exists($characterId, $playerCharacters[$character['player']]['characters']))
                         && !array_key_exists($characterId, $playerCharacters[$character['player']]['ships'])) {
-                        break;
+                        continue;
                     }
 
                     switch ($character['combat_type']) {
