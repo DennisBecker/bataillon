@@ -247,13 +247,13 @@
     "p2": [
       {
         "name": "Leia Spam",
-        "damage": "1000000",
+        "damage": "7000000",
         "characters": [
           {
             "id": "ADMIRALACKBAR",
             "rarity": 7,
-            "level": 85,
-            "gear": 8,
+            "level": 72,
+            "gear": 5,
             "zetas": []
           },
           {
@@ -300,7 +300,7 @@
             "id": "OLDBENKENOBI",
             "rarity": 7,
             "level": 85,
-            "gear": 8,
+            "gear": 11,
             "zetas": []
           },
           {
@@ -341,7 +341,7 @@
             "id": "BOBAFETT",
             "rarity": 7,
             "level": 85,
-            "gear": 11,
+            "gear": 8,
             "zetas": []
           },
           {
@@ -384,7 +384,7 @@
             "id": "GRANDADMIRALTHRAWN",
             "rarity": 7,
             "level": 85,
-            "gear": 8,
+            "gear": 11,
             "zetas": [
               "Legendary Strategist"
             ]
@@ -423,13 +423,13 @@
       },
       {
         "name": "Phoenix",
-        "damage": "1000000",
+        "damage": "1500000",
         "characters": [
           {
             "id": "HERASYNDULLAS3",
             "rarity": 7,
             "level": 85,
-            "gear": 8,
+            "gear": 11,
             "zetas": []
           },
           {
@@ -474,7 +474,7 @@
             "id": "KYLORENUNMASKED",
             "rarity": 7,
             "level": 85,
-            "gear": 8,
+            "gear": 11,
             "zetas": [
               "Pursuit Mechanics"
             ]
@@ -519,7 +519,7 @@
             "id": "COMMANDERLUKESKYWALKER",
             "rarity": 7,
             "level": 85,
-            "gear": 8,
+            "gear": 11,
             "zetas": []
           },
           {
@@ -542,14 +542,14 @@
             "id": "PAO",
             "rarity": 7,
             "level": 85,
-            "gear": 8,
+            "gear": 9,
             "zetas": []
           },
           {
             "id": "CHIRRUTIMWE",
             "rarity": 7,
             "level": 85,
-            "gear": 11,
+            "gear": 9,
             "zetas": []
           }
         ]
@@ -585,14 +585,14 @@
             "id": "ANAKINKNIGHT",
             "rarity": 7,
             "level": 85,
-            "gear": 8,
+            "gear": 9,
             "zetas": []
           },
           {
             "id": "CT7567",
             "rarity": 7,
             "level": 85,
-            "gear": 11,
+            "gear": 9,
             "zetas": []
           }
         ]
@@ -605,7 +605,7 @@
             "id": "COMMANDERLUKESKYWALKER",
             "rarity": 7,
             "level": 85,
-            "gear": 8,
+            "gear": 11,
             "zetas": [
 
             ]
@@ -632,7 +632,7 @@
             "id": "PAO",
             "rarity": 7,
             "level": 85,
-            "gear": 8,
+            "gear": 9,
             "zetas": [
 
             ]
@@ -641,7 +641,7 @@
             "id": "CT7567",
             "rarity": 7,
             "level": 85,
-            "gear": 11,
+            "gear": 9,
             "zetas": [
 
             ]
@@ -679,14 +679,14 @@
             "id": "ANAKINKNIGHT",
             "rarity": 7,
             "level": 85,
-            "gear": 8,
+            "gear": 9,
             "zetas": []
           },
           {
             "id": "CHIRRUTIMWE",
             "rarity": 7,
             "level": 85,
-            "gear": 11,
+            "gear": 9,
             "zetas": []
           }
         ]
@@ -695,7 +695,7 @@
     "p4": [
       {
         "name": "Original Nightsisters",
-        "damage": "590000",
+        "damage": "1000000",
         "characters": [
           {
             "id": "ASAJVENTRESS",
@@ -738,7 +738,7 @@
       },
       {
         "name": "Nightsisters with Zombie",
-        "damage": "1182000",
+        "damage": "1500000",
         "characters": [
           {
             "id": "ASAJVENTRESS",
@@ -773,15 +773,15 @@
           {
             "id": "NIGHTSISTERZOMBIE",
             "rarity": 7,
-            "level": 85,
-            "gear": 8,
+            "level": 80,
+            "gear": 5,
             "zetas": []
           }
         ]
       },
       {
         "name": "Nightsisters with Talzin",
-        "damage": "1182000",
+        "damage": "1500000",
         "characters": [
           {
             "id": "ASAJVENTRESS",
@@ -824,7 +824,7 @@
       },
       {
         "name": "Nightsisters with Talzin + Zombie 1",
-        "damage": "177300",
+        "damage": "2000000",
         "characters": [
           {
             "id": "ASAJVENTRESS",
@@ -859,15 +859,15 @@
           {
             "id": "NIGHTSISTERZOMBIE",
             "rarity": 7,
-            "level": 85,
-            "gear": 8,
+            "level": 80,
+            "gear": 5,
             "zetas": []
           }
         ]
       },
       {
         "name": "Nightsisters with Talzin + Zombie 2",
-        "damage": "177300",
+        "damage": "1000000",
         "characters": [
           {
             "id": "ASAJVENTRESS",
@@ -902,8 +902,8 @@
           {
             "id": "NIGHTSISTERZOMBIE",
             "rarity": 7,
-            "level": 85,
-            "gear": 8,
+            "level": 80,
+            "gear": 5,
             "zetas": []
           }
         ]
@@ -917,7 +917,9 @@
             "rarity": 7,
             "level": 85,
             "gear": 11,
-            "zetas": []
+            "zetas": [
+				        "Pursuit Mechanics"
+			      ]
           },
           {
             "id": "FIRSTORDERTROOPER",
