@@ -247,7 +247,7 @@
     "p2": [
       {
         "name": "Leia Spam",
-        "damage": "7000000",
+        "damage": "700000",
         "characters": [
           {
             "id": "ADMIRALACKBAR",
