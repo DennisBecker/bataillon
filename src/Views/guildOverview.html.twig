@@ -23,33 +23,34 @@
         </tr>
         </thead>
         <tbody>
-        {% for member in guild.member %}
+        {% for member in members %}
+            {% set comparingData = attribute(comparingPlayerData, member.name) %}
             <tr>
                 <th scope="row">{{ loop.index }}</th>
                 <td><a href="/{{ guildName|url_encode }}/{{ member.name|url_encode }}/index.html">{{ member.name }}</a>
                 </td>
                 <td>
                     {{ member.power|number_format }}
-                    {% if member.power_old > 0 and member.power - member.power_old > 0 %}
-                        <span class="oi oi-arrow-top"></span>{{ (member.power - member.power_old)|number_format }}
-                    {% elseif member.power_old > 0 and member.power - member.power_old < 0 %}
-                        <span class="oi oi-arrow-bottom"></span>{{ (member.power_old - member.power)|number_format }}
+                    {% if comparingData.power > 0 and member.power - comparingData.power > 0 %}
+                        <span class="oi oi-arrow-top"></span>{{ (member.power - comparingData.power)|number_format }}
+                    {% elseif comparingData.power > 0 and member.power - comparingData.power < 0 %}
+                        <span class="oi oi-arrow-bottom"></span>{{ (comparingData.power - member.power)|number_format }}
                     {% endif %}
                 </td>
                 <td>
                     {{ member.power_characters|number_format }}
-                    {% if member.power_characters_old > 0 and member.power_characters - member.power_characters_old > 0 %}
-                        <span class="oi oi-arrow-top"></span>{{ (member.power_characters - member.power_characters_old)|number_format }}
-                    {% elseif member.power_characters_old > 0 and member.power_characters - member.power_characters_old < 0 %}
-                        <span class="oi oi-arrow-bottom"></span>{{ (member.power_characters_old - member.power_characters)|number_format }}
+                    {% if comparingData.power_characters > 0 and member.power_characters - comparingData.power_characters > 0 %}
+                        <span class="oi oi-arrow-top"></span>{{ (member.power_characters - comparingData.power_characters)|number_format }}
+                    {% elseif comparingData.power_characters > 0 and member.power_characters - comparingData.power_characters < 0 %}
+                        <span class="oi oi-arrow-bottom"></span>{{ (comparingData.power_characters - member.power_characters)|number_format }}
                     {% endif %}
                 </td>
                 <td>
                     {{ member.power_ships|number_format }}
-                    {% if member.power_ships_old > 0 and member.power_ships - member.power_ships_old > 0 %}
-                        <span class="oi oi-arrow-top"></span>{{ (member.power_ships - member.power_ships_old)|number_format }}
-                    {% elseif member.power_ships_old > 0 and member.power_ships - member.power_ships_old < 0 %}
-                        <span class="oi oi-arrow-bottom"></span>{{ (member.power_ships_old - member.power_ships)|number_format }}
+                    {% if comparingData.power_ships > 0 and member.power_ships - comparingData.power_ships > 0 %}
+                        <span class="oi oi-arrow-top"></span>{{ (member.power_ships - comparingData.power_ships)|number_format }}
+                    {% elseif comparingData.power_ships > 0 and member.power_ships - comparingData.power_ships < 0 %}
+                        <span class="oi oi-arrow-bottom"></span>{{ (comparingData.power_ships - member.power_ships)|number_format }}
                     {% endif %}
                 </td>
                 <td>{{ member.characters|length }}</td>

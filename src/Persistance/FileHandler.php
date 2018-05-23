@@ -12,6 +12,33 @@ class FileHandler
         file_put_contents(static::DATA_DIR . $filename, $data);
     }
 
+    public function getListOfDataPoints()
+    {
+        $filesystemIterator = new \FilesystemIterator(static::DATA_DIR . 'guilds', \FilesystemIterator::SKIP_DOTS);
+
+        $dataPoints = [];
+        foreach ($filesystemIterator as $directory) {
+            $dataPoints[] = $directory->getFilename();
+        }
+
+        usort($dataPoints, function($a, $b) {
+            $dateA = new \DateTimeImmutable($a);
+            $dateB = new \DateTimeImmutable($b);
+
+            if ($dateA < $dateB) {
+                return 1;
+            }
+
+            if ($dateA > $dateB) {
+                return -1;
+            }
+
+            return 0;
+        });
+
+        return $dataPoints;
+    }
+
     public function readGuildDataOfLastTwoDataPoints($guild)
     {
         $filesystemIterator = new \FilesystemIterator(static::DATA_DIR . 'guilds', \FilesystemIterator::SKIP_DOTS);
