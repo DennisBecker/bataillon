@@ -16,6 +16,7 @@
             {% set ready = 'red' %}
             {% set char = attribute(characters, character.id) %}
             {% set playerChar = attribute(playerCharacters, character.id) %}
+            {% set comparingPlayerChar = attribute(comparingPlayerCharacters, character.id) %}
 
             {% if playerChar.rarity|default(0) >= character.rarity and playerChar.gear|default(0) >= character.gear and playerChar.level|default(0) >= character.level %}
                 {% set ready = 'green' %}
@@ -24,11 +25,19 @@
                 <td class="{% if character.zetas|length > 0 %}bg-violet{% endif %}">{{ char.name }}</td>
                 <td class="bg-{{ getReadinessColor(character.rarity, playerChar.rarity|default(0)) }}">
                     {{ playerChar.rarity|default(0) }}
-                    {% if playerChar.rarity_old is defined and playerChar.rarity - playerChar.rarity_old > 0 %} <span
-                            class="oi oi-arrow-top"></span>{{ playerChar.rarity - playerChar.rarity_old }}{% endif %}
+                    {% if comparingPlayerChar.rarity is defined and playerChar.rarity - comparingPlayerChar.rarity > 0 %} <span
+                            class="oi oi-arrow-top"></span>{{ playerChar.rarity - comparingPlayerChar.rarity }}{% endif %}
                 </td>
-                <td class="bg-{{ getReadinessColor(character.gear, playerChar.gear|default(0)) }}">{{ playerChar.gear|default(0) }}</td>
-                <td class="bg-{{ getReadinessColor(character.level, playerChar.level|default(0)) }}">{{ playerChar.level|default(0) }}</td>
+                <td class="bg-{{ getReadinessColor(character.gear, playerChar.gear|default(0)) }}">
+                    {{ playerChar.gear|default(0) }}
+                    {% if comparingPlayerChar.gear is defined and playerChar.gear - comparingPlayerChar.gear > 0 %} <span
+                            class="oi oi-arrow-top"></span>{{ playerChar.gear - comparingPlayerChar.gear }}{% endif %}
+                </td>
+                <td class="bg-{{ getReadinessColor(character.level, playerChar.level|default(0)) }}">
+                    {{ playerChar.level|default(0) }}
+                    {% if comparingPlayerChar.level is defined and playerChar.level - comparingPlayerChar.level > 0 %} <span
+                            class="oi oi-arrow-top"></span>{{ playerChar.level - comparingPlayerChar.level }}{% endif %}
+                </td>
                 <td class="bg-{{ ready }}">{% if ready == 'red' %}No!{% else %}Yes!{% endif %}</td>
             </tr>
         {% endfor %}

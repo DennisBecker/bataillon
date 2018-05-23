@@ -77,8 +77,8 @@ class BuildStaticPagesCommand
                     'raidTeams' => $teams,
                 ]);
             }
-/*
-            foreach ($data['member'] as $memberName => $memberData) {
+
+            foreach ($members as $memberName => $memberData) {
                 $this->render('memberOverview.html.twig', $guild . '/' . $memberName . '/index.html', [
                     'guilds' => $currentGuildData,
                     'activeGuild' => $guild,
@@ -88,18 +88,23 @@ class BuildStaticPagesCommand
                 ]);
 
                 foreach ($raids as $raid => $teams) {
+                    $comparingCharacters = [];
+                    if (isset($comparingPlayerData[$memberName])) {
+                        $comparingCharacters = $comparingPlayerData[$memberName]['characters'];
+                    }
+
                     $this->render('raids/' . $raid . '.html.twig', $guild . '/' . $memberName . '/' . $raid . '.html', [
-                        'guilds' => $guildData,
+                        'guilds' => $currentGuildData,
                         'activeGuild' => $guild,
                         'memberName' => $memberName,
                         'characters' => $characters,
                         'playerCharacters' => $memberData['characters'],
+                        'comparingPlayerCharacters' => $comparingCharacters,
                         'raid' => $raid,
                         'raidTeams' => $teams,
                     ]);
                 }
             }
-*/
         }
     }
 
