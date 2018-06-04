@@ -1,4 +1,57 @@
 {
+  "Tank Takedown": {
+    "p1": [
+      {
+        "name": "Brotini (Solo P1)",
+        "damage": "4300000",
+        "characters": [
+          {
+            "id": "DATHCHA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "COMMANDERLUKESKYWALKER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 12,
+            "zetas": [
+              "It Binds All Things"
+            ]
+          },
+          {
+            "id": "HANSOLO",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Shoots First"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "zKylo",
+        "damage": "4300000",
+        "characters": [
+          {
+            "id": "KYLOREN",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Outrage"
+            ]
+          }
+        ]
+      }
+    ],
+    "p2": [],
+    "p3": [],
+    "p4": []
+  },
   "Sith Triumvirate": {
     "p1": [
       {
@@ -51,7 +104,6 @@
       {
         "name": "RJT & Friends + Visas / No R2",
         "damage": "2000000",
-
         "characters": [
           {
             "id": "REYJEDITRAINING",
@@ -97,7 +149,6 @@
       {
         "name": "RJT & Friends + Visas",
         "damage": "2000000",
-
         "characters": [
           {
             "id": "REYJEDITRAINING",
@@ -194,7 +245,6 @@
       {
         "name": "RJT & Friends + Hermit Yoda",
         "damage": "2000000",
-
         "characters": [
           {
             "id": "REYJEDITRAINING",
@@ -229,7 +279,6 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-
             ]
           },
           {
@@ -269,7 +318,6 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-
             ]
           },
           {
@@ -607,7 +655,6 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-
             ]
           },
           {
@@ -625,7 +672,6 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-
             ]
           },
           {
@@ -634,7 +680,6 @@
             "level": 85,
             "gear": 9,
             "zetas": [
-
             ]
           },
           {
@@ -643,7 +688,6 @@
             "level": 85,
             "gear": 9,
             "zetas": [
-
             ]
           }
         ]
@@ -918,8 +962,8 @@
             "level": 85,
             "gear": 11,
             "zetas": [
-				        "Pursuit Mechanics"
-			      ]
+              "Pursuit Mechanics"
+            ]
           },
           {
             "id": "FIRSTORDERTROOPER",

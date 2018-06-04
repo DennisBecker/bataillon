@@ -64,10 +64,11 @@ class BuildStaticPagesCommand
                 'guildName' => $guild,
                 'members' => $members,
                 'comparingPlayerData' => $comparingPlayerData,
+                'raids' => $raids,
             ]);
 
             foreach ($raids as $raid => $teams) {
-                $this->render('raids/sithOverview.html.twig', $guild . '/' . $raid . '.html', [
+                $this->render('raids/raidOverview.html.twig', $guild . '/' . $raid . '.html', [
                     'guilds' => $currentGuildData,
                     'activeGuild' => $guild,
                     'guildName' => $guild,
@@ -93,7 +94,7 @@ class BuildStaticPagesCommand
                         $comparingCharacters = $comparingPlayerData[$memberName]['characters'];
                     }
 
-                    $this->render('raids/' . $raid . '.html.twig', $guild . '/' . $memberName . '/' . $raid . '.html', [
+                    $this->render('raids/raidTeamsPlayer.html.twig', $guild . '/' . $memberName . '/' . $raid . '.html', [
                         'guilds' => $currentGuildData,
                         'activeGuild' => $guild,
                         'memberName' => $memberName,

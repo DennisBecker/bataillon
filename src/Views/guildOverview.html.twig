@@ -7,7 +7,9 @@
 
     <h3 class="section-bar">Raid Team Overview</h3>
     <ul>
-        <li><a href="/{{ guildName|url_encode }}/{{ "Sith Triumvirate.html"|url_encode }}">Sith Triumvirate</a></li>
+        {% for raid, raidData in raids %}
+            <li><a href="/{{ guildName|url_encode }}/{{ raid|url_encode }}.html">{{ raid }}</a></li>
+        {% endfor %}
     </ul>
 
     <h3 class="section-bar">Member Overview</h3>
