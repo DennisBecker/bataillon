@@ -46,11 +46,7 @@ class UpdateController
         $this->updateCharacters($progressBar);
         $this->updateShips($progressBar);
 
-        $today = $this->getCurrentDateTime();
-
-        if ($forceUpdate || (int)$today->format('w') === 1) {
-            $this->updateGuilds($progressBar);
-        }
+        $this->updateGuilds($progressBar);
 
         $progressBar->finish();
 
@@ -121,10 +117,12 @@ class UpdateController
             return 0;
         });
 
+        // TODO find a way to remove old data
+        /*
         foreach (array_slice($guildDataDirectories, 2) as $deletableDir) {
             $this->fileHandler->clearDirectory(static::DATA_DIR . 'guilds/' . $deletableDir);
             $this->fileHandler->removeDirectory(static::DATA_DIR . 'guilds/' . $deletableDir);
-        }
+        }*/
     }
 
     /**

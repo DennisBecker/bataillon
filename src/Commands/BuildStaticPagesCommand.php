@@ -38,7 +38,6 @@ class BuildStaticPagesCommand
     public function __invoke(OutputInterface $output, ContainerInterface $container)
     {
         $this->output = $output;
-        $this->fileHandler->clearDirectory($this->distPath);
 
         $dataPointData = $container->call(GuildDataController::class);
 

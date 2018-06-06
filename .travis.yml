@@ -6,7 +6,7 @@ install:
   - composer install
 
 script:
-  - php bataillon.php update --remove-outdated
+  - ./vendor/bin/robo update
 
 after_success:
   - ./push.sh

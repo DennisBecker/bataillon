@@ -9,6 +9,8 @@ use Bataillon\Persistance\FileHandler;
 
 class GuildDataController
 {
+    private const INTERVAL_DAYS = 7;
+
     /**
      * @var GuildDataModel
      */
@@ -35,7 +37,8 @@ class GuildDataController
     {
         $dataPoints = $this->fileHandler->getListOfDataPoints();
         $currentDataPoint = array_shift($dataPoints);
-        $comparingDataPoint = array_shift($dataPoints);
+
+        $comparingDataPoint = $this->findComparingDataPoint($currentDataPoint, $dataPoints);
 
         unset($dataPoints);
         $currentPlayerData = $this->guildDataModel->getPlayerData($currentDataPoint);
@@ -61,5 +64,26 @@ class GuildDataController
             'currentPlayerData' => $currentPlayerData,
             'comparingPlayerData' => $comparingPlayerDataFlat,
         ];
+    }
+
+    private function findComparingDataPoint($currentDataPoint, $dataPoints)
+    {
+        try {
+            $currentDataPointDate = new \DateTimeImmutable($currentDataPoint);
+
+            foreach ($dataPoints as $index => $dataPoint) {
+                $dataPointDate = new \DateTimeImmutable($dataPoint);
+
+                $dateDiff = $currentDataPointDate->diff($dataPointDate);
+
+                if ($dateDiff->days === static::INTERVAL_DAYS) {
+                    return $dataPoint;
+                }
+            }
+
+            return end($dataPoints);
+        } catch (\Exception $e) {
+            throw new \RuntimeException($e->getMessage(), $e->getCode(), $e);
+        }
     }
 }
