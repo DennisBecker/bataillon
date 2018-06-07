@@ -30,5 +30,12 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.0.2/tablesort.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.0.2/sorts/tablesort.number.min.js"></script>
+<script>
+    Array.from(document.getElementsByClassName("sortable")).forEach(function(item) {
+        new Tablesort(item);
+    });
+</script>
 </body>
 </html>
