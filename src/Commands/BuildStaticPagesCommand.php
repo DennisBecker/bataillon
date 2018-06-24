@@ -128,7 +128,13 @@ class BuildStaticPagesCommand
      */
     protected function getRaidData(): array
     {
-        return json_decode($this->fileHandler->read('raids.json'), true);
+        $data = json_decode($this->fileHandler->read('raids.json'), true);
+
+        if (json_last_error()) {
+            throw new \RuntimeException(sprintf('%s in %s', json_last_error_msg(), 'raids.json'), json_last_error());
+        }
+
+        return $data;
     }
 
     /**
