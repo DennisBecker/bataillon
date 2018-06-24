@@ -556,7 +556,54 @@
             "zetas": []
           }
         ]
-      }
+      },
+      {
+        "name": "RJT & Sabine",
+        "damage": "2000000",
+        "characters": [
+          {
+            "id": "REYJEDITRAINING",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Inspirational Presence"
+            ]
+          },
+          {
+            "id": "BB8",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Roll with the Punches"
+            ]
+          },
+          {
+            "id": "R2D2_LEGENDARY",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Number Crunch"
+            ]
+          },
+          {
+            "id": "SABINEWRENS3",
+            "rarity": 7,
+            "level": 85,
+            "gear": 10,
+            "zetas": []
+          },
+          {
+            "id": "RESISTANCETROOPER",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          }
+        ]
+      },
     ],
     "p3": [
       {
