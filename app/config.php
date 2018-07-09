@@ -7,12 +7,13 @@ $container->set('GuildList', [
     'Imperial Bataillon' => '/api/guilds/21878/units/',
     '104th Bataillon' => '/api/guilds/18908/units/',
     '41st Bataillon' => '/api/guilds/41033/units/',
-    'B2TF Bataillon' => '/api/guilds/25014/units/',
+    '91st Bataillon' => '/api/guilds/25014/units/',
     'Outerrim10 Bataillon' => '/api/guilds/25118/units/',
     '313th Bataillon' => '/api/guilds/41470/units/',
     '443rd Bataillon' => '/api/guilds/41450/units/',
     '442nd Bataillon' => '/api/guilds/16040/units/',
     '18th Bataillon' => '/api/guilds/32283/units/',
+    '43rd Bataillon' => '/api/guilds/19787/units/',
 ]);
 
 $container->set(Twig_Environment::class, function () {
