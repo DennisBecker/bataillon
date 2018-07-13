@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Territory War</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <style>
+        body {
+            font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        table.compact th,
+        table.compact td {
+            padding: 2px 5px;
+        }
+
+        .collapsible-teams th,
+        .collapsible-teams td {
+            border-radius: 0;
+        }
+
+        .collapsible-teams thead tr,
+        .modsets {
+            background-color: #e0e0e0;
+        }
+
+        .priority1 {
+            background-color: #e65100;
+        }
+
+        .priority2 {
+            background-color: #ff8f00;
+        }
+
+        .priority3 {
+            background-color: #fbc02d;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar-fixed">
+        <nav class="light-blue darken-4">
+            <div class="nav-wrapper container">
+                <a href="/" class="brand-logo">Bataillon</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-guilds">Guilds<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul id="dropdown-guilds" class="dropdown-content">
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">three</a></li>
+        </ul>
+    </header>
+    <main class="container">
+        <div class="col s12">
+            <h3>Teams to counter in Territory Wars</h3>
+
+            <h4 class="team-header">Palpatine Lead + Traya</h4>
+            <ul class="collapsible collapsible-teams">
+                <li>
+                    <div class="collapsible-header counterteam-header">Wedge + Biggs<i class="material-icons">chevron_right</i></div>
+                    <div class="collapsible-body">
+                        <table class="compact">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Mods</th>
+                                    <th>Leader</th>
+                                    <th colspan="5">other Characters</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">&nbsp;</td>
+                                    <td class="priority1">Wedge</td>
+                                    <td class="priority1">Biggs</td>
+                                    <td class="priority1">CLS</td>
+                                    <td class="priority1">Solo</td>
+                                    <td class="priority2">Thrawn</td>
+                                    <td class="priority2">R2-D2</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2" class="center-align modsets">Mod Sets</th>
+                                    <td>CD & CC</td>
+                                    <td>CD & CC</td>
+                                    <td>CD & CC</td>
+                                    <td>CD & CC</td>
+                                    <td>Tenacity & Health</td>
+                                    <td>Offense & Health / Potency</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">primary</td>
+                                    <td>Arrow</td>
+                                    <td>Speed</td>
+                                    <td>Speed</td>
+                                    <td>Speed</td>
+                                    <td>Speed</td>
+                                    <td>Speed</td>
+                                    <td>Speed</td>
+                                </tr>
+                                <tr>
+                                    <td>Triangle</td>
+                                    <td>CD</td>
+                                    <td>CD</td>
+                                    <td>CD</td>
+                                    <td>CD</td>
+                                    <td>Offense / Protection</td>
+                                    <td>Offense</td>
+                                </tr>
+                                <tr>
+                                    <td>Circle</td>
+                                    <td>Protection</td>
+                                    <td>Protection</td>
+                                    <td>Protection</td>
+                                    <td>Protection</td>
+                                    <td>Protection</td>
+                                    <td>Protection</td>
+                                </tr>
+                                <tr>
+                                    <td>Cross</td>
+                                    <td>Offense</td>
+                                    <td>Offense</td>
+                                    <td>Offense</td>
+                                    <td>Offense</td>
+                                    <td>Offense / Protection</td>
+                                    <td>Offense / Potency</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">secondary</td>
+                                    <td>1.</td>
+                                    <td>Offense</td>
+                                    <td>Offense</td>
+                                    <td>Offense</td>
+                                    <td>Speed</td>
+                                    <td>Speed</td>
+                                    <td>Speed</td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td>Speed</td>
+                                    <td>Speed</td>
+                                    <td>Speed</td>
+                                    <td>Offense</td>
+                                    <td>Protection</td>
+                                    <td>Offense</td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td>Crit Chance</td>
+                                    <td>Crit Chance</td>
+                                    <td>Crit Chance</td>
+                                    <td>Crit Chance</td>
+                                    <td>Offense</td>
+                                    <td>Potency</td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <td>Health</td>
+                                    <td>Health</td>
+                                    <td>Health</td>
+                                    <td>Health</td>
+                                    <td>Health</td>
+                                    <td>Protection</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>
+                            Solo stunnt den nicht Sith (Thrawn, Nest, etc) wenn vorhanden, ansonsten direkt mit Palpatine starten.<br>
+                            Thrawn setzt Bruch auf Sion oder wenn nötig auf Sithtruppler wenn dieser drin ist/ R2 setzt Smoke auf sich selbst um Isolation abzufangen<br>
+                            CLS sollte dann Palp die Zugleiste nehmen und evtl sogar schon umhauen (Palp darf nicht dran kommen!)<br>
+                            Dann Fokus auf Traya setzen. Sind Palp und Traya ohne Verluste raus sollte das Ding durch sein<br>
+                            Andere Option ist direkt CLS Lead
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header counterteam-header">Boba Nest CLS Solo Thrawn<i class="material-icons">chevron_right</i></div>
+                    <div class="collapsible-body">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th colspan="2">Mods</th>
+                                <th>Leader</th>
+                                <th colspan="5">other Characters</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                                <td>Boba</td>
+                                <td>Nest</td>
+                                <td>CLS</td>
+                                <td>Solo</td>
+                                <td>Thrawn</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="center-align">Mod Sets</td>
+                                <td>CD & CC</td>
+                                <td>Tenacity & Health</td>
+                                <td>CD & CC</td>
+                                <td>CD & CC</td>
+                                <td>Tenacity & Health</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">primary</td>
+                                <td>Arrow</td>
+                                <td>Speed</td>
+                                <td>Speed</td>
+                                <td>Speed</td>
+                                <td>Speed</td>
+                                <td>Speed</td>
+                            </tr>
+                            <tr>
+                                <td>Triangle</td>
+                                <td>CD</td>
+                                <td>Health</td>
+                                <td>CD</td>
+                                <td>CD</td>
+                                <td>Offense / Protection</td>
+                            </tr>
+                            <tr>
+                                <td>Circle</td>
+                                <td>Protection</td>
+                                <td>Health</td>
+                                <td>Protection</td>
+                                <td>Protection</td>
+                                <td>Protection</td>
+                            </tr>
+                            <tr>
+                                <td>Cross</td>
+                                <td>Offense</td>
+                                <td>Health</td>
+                                <td>Offense</td>
+                                <td>Offense</td>
+                                <td>Offense / Protection</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">secondary</td>
+                                <td>1.</td>
+                                <td>Offense</td>
+                                <td>Speed</td>
+                                <td>Offense</td>
+                                <td>Speed</td>
+                                <td>Speed</td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td>Speed</td>
+                                <td>Health</td>
+                                <td>Speed</td>
+                                <td>Offense</td>
+                                <td>Protection</td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td>Crit Chance</td>
+                                <td>Potency</td>
+                                <td>Crit Chance</td>
+                                <td>Crit Chance</td>
+                                <td>Offense</td>
+                            </tr>
+                            <tr>
+                                <td>4.</td>
+                                <td>Health</td>
+                                <td>Offense</td>
+                                <td>Health</td>
+                                <td>Health</td>
+                                <td>Health</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <p>
+                            Solo stunnt den nicht Sith (Thrawn, Nest, etc) wenn vorhanden, ansonsten direkt mit Palpatine starten.<br>
+                            Nest AOE um die Zugleiste zu senken und zu verwirren<br>
+                            Thrawn setzt Bruch auf Sion oder wenn nötig auf Sithtruppler wenn dieser drin ist/ R2 Smoke auf sich selbst wegen Isolation<br>
+                            CLS sollte dann Palp die Zugleiste nehmen und evtl sogar schon umhauen (Palp darf nicht dran kommen!)<br>
+                            Dann Fokus auf Traya setzen. Sind Palp und Traya ohne Verluste raus sollte das Ding durch sein<br>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+            <h4>Traya Lead Teams</h4>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            M.AutoInit();
+            $(".dropdown-trigger").dropdown();
+            $(".collapsible-header").click(function(event) {
+                const clickedHeader = $(event.target).closest('li');
+                if (!clickedHeader.hasClass('active')) {
+                    clickedHeader.find('> .collapsible-header').find('.material-icons').text('expand_more');
+                } else {
+                    clickedHeader.find('> .collapsible-header').find('.material-icons').text('chevron_right');
+                }
+            })
+        });
+    </script>
+</body>
+</html>
