@@ -7,6 +7,7 @@ install:
 
 script:
   - ./vendor/bin/robo update
+  - ./vendor/bin/robo cleanup
 
 after_success:
   - ./push.sh

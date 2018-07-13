@@ -31,6 +31,10 @@ class RoboFile extends \Robo\Tasks
         $this->taskExec('php bataillon.php build')->run();
     }
 
+    public function cleanup() {
+        $this->taskExec('php bataillon.php cleanup')->run();
+    }
+
     public function update() {
         $this->taskExec('php bataillon.php update')->run();
     }
