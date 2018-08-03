@@ -339,6 +339,51 @@
             ]
           }
         ]
+      },{
+        "name": "Leia Spam with Hermit Yoda",
+        "damage": "1200000",
+        "characters": [
+          {
+            "id": "ADMIRALACKBAR",
+            "rarity": 7,
+            "level": 72,
+            "gear": 5,
+            "zetas": []
+          },
+          {
+            "id": "PRINCESSLEIA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": []
+          },
+          {
+            "id": "GENERALKENOBI",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+            ]
+          },
+          {
+            "id": "HERMITYODA",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Strength Flows From the Force"
+            ]
+          },
+          {
+            "id": "BARRISSOFFEE",
+            "rarity": 7,
+            "level": 85,
+            "gear": 11,
+            "zetas": [
+              "Swift Recovery"
+            ]
+          }
+        ]
       },
       {
         "name": "Old Ben lead Wampa",
